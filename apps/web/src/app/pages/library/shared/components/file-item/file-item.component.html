@@ -1,0 +1,52 @@
+<!-- TODO: Fix mouseleave hoverCover - sometimes the button (play/pause) still shows after leaving hover -->
+<simpler-item
+  (click)="open($event)"
+  (dblclick)="openDetail($event)"
+  [ngbTooltip]="file?.name"
+  [class.animation-fade-loop]="skeleton"
+>
+  <ng-container start>
+    <ng-container *ngIf="!skeleton">
+      <!-- TODO: show animated soundwave icon  -->
+
+      <div class="content-start">
+        <div class="cover">
+          <simpler-file-cover
+            [coverUrl]="file?.coverUrl"
+            size="small"
+          ></simpler-file-cover>
+        </div>
+
+        <simpler-icon-button
+          (click)="play()"
+          [ngbTooltip]="
+            'components.audioPlayer.playButton.tooltip'
+              | translate: { name: file?.name }
+          "
+          appearance="transparent"
+          color="light"
+          icon="play-fill"
+          size="small"
+          class="play-button"
+        >
+        </simpler-icon-button>
+      </div>
+    </ng-container>
+
+    <simpler-skeleton
+      *ngIf="skeleton"
+      style="width: 32px; height: 32px; border-radius: 8px"
+    ></simpler-skeleton>
+  </ng-container>
+
+  <ng-container title>
+    <ng-container *ngIf="!skeleton">
+      {{ file?.name }}
+    </ng-container>
+
+    <simpler-skeleton
+      *ngIf="skeleton"
+      style="width: 50%; height: 14px"
+    ></simpler-skeleton>
+  </ng-container>
+</simpler-item>

@@ -1,0 +1,39 @@
+@import '../../../../styles/src/lib/scss/variables/colors';
+
+:host {
+  display: block;
+  width: 320px;
+}
+
+.simpler-card {
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--clr-light-transparent-2);
+  transition: var(--transition-duration-normal) background-color ease;
+
+  &:hover {
+    background-color: var(--clr-gray-transparent-1);
+  }
+
+  &-content {
+    display: flex;
+  }
+
+  &-icon {
+    margin-right: 24px;
+  }
+
+  &-text {
+    flex: 1;
+  }
+
+  &-title {
+    color: var(--clr-light);
+  }
+
+  &-subtitle,
+  &-body {
+    margin: 0;
+    color: var(--clr-light-darkest);
+  }
+}

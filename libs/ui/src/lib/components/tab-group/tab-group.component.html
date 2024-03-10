@@ -1,0 +1,21 @@
+<div class="simpler-tab-group">
+  <div class="simpler-tab-group-header">
+    <button
+      *ngFor="let tab of tabs; index as index"
+      (click)="selectTab(tab.value)"
+      [class.simpler-tab-button-selected]="value === tab.value"
+      class="simpler-tab-button tp-button"
+    >
+      {{ tab.label }}
+    </button>
+
+    <div
+      [hidden]="!selectedTab"
+      [style.width]="(1 / tabs.length) * 100 + '%'"
+      [style.transform]="'translateX(' + (selectedTabIndex || 0) * 100 + '%)'"
+      class="simpler-tab-selected-indicator"
+    ></div>
+  </div>
+
+  <ng-content></ng-content>
+</div>

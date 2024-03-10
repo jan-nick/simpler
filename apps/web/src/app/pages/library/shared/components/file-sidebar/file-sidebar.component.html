@@ -1,0 +1,144 @@
+<div
+  *ngIf="libraryFile$ | async as libraryFile"
+  class="h-100 px-3 py-4 gap-3 d-flex flex-column justify-content-between"
+>
+  <div class="gap-3 d-flex flex-column">
+    <div class="d-flex justify-content-between">
+      <div class="file-cover">
+        <simpler-file-cover
+          [coverUrl]="libraryFile.coverUrl"
+          size="largest"
+        ></simpler-file-cover>
+
+        <div (click)="fileInput.click()" class="file-cover-button-wrapper">
+          <span class="tp-button">
+            {{ 'pages.library.fileSidebar.changeCoverButton' | translate }}
+          </span>
+        </div>
+
+        <input
+          #fileInput
+          (change)="onCoverFileSelect($event)"
+          [accept]="ACCEPTED_COVER_FILE_TYPES"
+          type="file"
+          multiple
+          hidden
+        />
+      </div>
+
+      <simpler-icon-button
+        (click)="close()"
+        appearance="outline"
+        color="light"
+        icon="x"
+        size="small"
+      >
+      </simpler-icon-button>
+    </div>
+
+    <div class="gap-2 d-flex align-items-center">
+      <simpler-icon-button
+        (click)="play()"
+        [ngbTooltip]="
+          'components.audioPlayer.playButton.tooltip'
+            | translate: { name: libraryFile?.name }
+        "
+        appearance="solid"
+        color="light"
+        icon="play-fill"
+        size="small"
+        class="play-button"
+      >
+      </simpler-icon-button>
+      <input
+        (blur)="updateName($event)"
+        (keydown.enter)="updateName($event)"
+        [value]="libraryFile.name"
+        [ngbTooltip]="
+          'pages.library.fileSidebar.renameFileInput.tooltip' | translate
+        "
+        class="tp-headline-5"
+      />
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <div>
+        <p class="m-0 tp-caption text-gray-lightest">
+          {{ 'pages.library.fileSidebar.location' | translate }}
+        </p>
+        <p class="m-0 tp-body-1 text-light">
+          {{ 'pages.library.fileSidebar.yourLibrary' | translate }}
+        </p>
+      </div>
+
+      <simpler-icon-button
+        [routerLink]="'library/files/' + (libraryFile.libraryFolderId || '')"
+        [ngbTooltip]="'pages.library.openFileFolderButton.tooltip' | translate"
+        appearance="outline"
+        color="light"
+        icon="arrow-up-right"
+        size="small"
+      >
+      </simpler-icon-button>
+    </div>
+
+    <div>
+      <p class="m-0 tp-caption text-gray-lightest">
+        {{ 'pages.library.fileSidebar.modified' | translate }}
+      </p>
+      <p
+        [ngbTooltip]="libraryFile.updatedAt | dfnsFormat: 'Pp'"
+        class="m-0 tp-body-1 text-light"
+      >
+        {{ libraryFile.updatedAt | dfnsFormat: 'P' }}
+      </p>
+    </div>
+
+    <div>
+      <p class="m-0 tp-caption text-gray-lightest">
+        {{ 'pages.library.fileSidebar.created' | translate }}
+      </p>
+      <p
+        [ngbTooltip]="libraryFile.createdAt | dfnsFormat: 'Pp'"
+        class="m-0 tp-body-1 text-light"
+      >
+        {{ libraryFile.createdAt | dfnsFormat: 'P' }}
+      </p>
+    </div>
+
+    <div>
+      <p class="m-0 tp-caption text-gray-lightest">
+        {{ 'pages.library.fileSidebar.size' | translate }}
+      </p>
+      <p *ngIf="(fileSize$ | async) != null" class="m-0 tp-body-1 text-light">
+        {{ fileSize$ | async }}
+      </p>
+      <simpler-skeleton
+        *ngIf="(fileSize$ | async) == null"
+        class="mt-1"
+        style="width: 48px; height: 20px; border-radius: 8px"
+      ></simpler-skeleton>
+    </div>
+  </div>
+
+  <div>
+    <simpler-divider> </simpler-divider>
+    <div class="mt-3 gap-2 d-flex justify-content-end">
+      <simpler-file-share-button
+        [libraryFile]="libraryFile"
+      ></simpler-file-share-button>
+      <simpler-file-download-button
+        [libraryFile]="libraryFile"
+        [signedUrl]="signedUrl$ | async"
+      ></simpler-file-download-button>
+      <simpler-icon-button
+        (click)="openFileDeleteDialog()"
+        [ngbTooltip]="'pages.library.deleteFileButton.tooltip' | translate"
+        appearance="outline"
+        color="light"
+        icon="trash"
+        size="small"
+      ></simpler-icon-button>
+    </div>
+  </div>
+</div>

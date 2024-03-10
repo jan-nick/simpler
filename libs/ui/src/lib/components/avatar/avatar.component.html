@@ -1,0 +1,15 @@
+<div
+  class="simpler-avatar"
+  [ngClass]="['simpler-avatar-' + size]"
+  [ngStyle]="{ height: sizeSpecs[size], width: sizeSpecs[size] }"
+>
+  <img
+    [src]="src || initialsSrc"
+    [srcset]="srcset"
+    [sizes]="sizes"
+    [alt]="alt"
+    [attr.height]="sizeSpecs[size]"
+    [attr.width]="sizeSpecs[size]"
+    class="simpler-avatar-image"
+  />
+</div>

@@ -1,0 +1,33 @@
+<div class="simpler-slider" [class.simpler-slider-disabled]="disabled">
+  <input
+    #input
+    class="simpler-slider-input"
+    (change)="onChange(getValueFromChangeEvent($event)); emitChange()"
+    (input)="onChange(getValueFromChangeEvent($event)); emitInput()"
+    [(ngModel)]="value"
+    [ngModelOptions]="{ standalone: true }"
+    [min]="min"
+    [max]="max"
+    [attr.name]="name"
+    [disabled]="disabled"
+    [step]="step"
+    [id]="name"
+    type="range"
+  />
+
+  <div class="simpler-slider-track">
+    <div
+      class="simpler-slider-track-fill"
+      [ngStyle]="{
+        transform: 'scaleX(' + (value - min) / (max - min) + ')'
+      }"
+    ></div>
+  </div>
+
+  <div
+    [ngStyle]="{
+      'margin-left': ((value - min) * 100) / (max - min) + '%'
+    }"
+    class="simpler-slider-thumb"
+  ></div>
+</div>

@@ -1,0 +1,44 @@
+<div
+  class="simpler-toggle"
+  (click)="input.click()"
+  [class.simpler-toggle-checked]="checked"
+  [class.simpler-toggle-disabled]="disabled"
+  [class.simpler-toggle-label-right]="labelPosition === 'right'"
+  [class.simpler-toggle-label-left]="labelPosition === 'left'"
+>
+  <input
+    #input
+    class="simpler-toggle-input"
+    (change)="onChange(getValueFromChangeEvent($event)); emitChange()"
+    (click)="onInputClick($event)"
+    (keyup.enter)="onInputClick($event)"
+    [checked]="checked"
+    [value]="value"
+    [name]="name"
+    [required]="required"
+    [disabled]="disabled"
+    [id]="name"
+    type="checkbox"
+  />
+
+  <label
+    *ngIf="label && labelPosition === 'left'"
+    class="simpler-toggle-label tp-label"
+    [for]="name"
+  >
+    {{ label }}
+  </label>
+
+  <div class="simpler-toggle-icon">
+    <div class="simpler-toggle-icon-thumb"></div>
+    <div class="simpler-toggle-icon-bar"></div>
+  </div>
+
+  <label
+    *ngIf="label && labelPosition === 'right'"
+    class="simpler-toggle-label tp-label"
+    [for]="name"
+  >
+    {{ label }}
+  </label>
+</div>

@@ -1,0 +1,42 @@
+<ng-container
+  *ngIf="{
+    folders: libraryFilesService.folders$ | async,
+    files: libraryFilesService.files$ | async,
+    loading: libraryFilesService.loading$ | async,
+    error: libraryFilesService.error$ | async
+  } as data"
+>
+  <simpler-list *ngIf="!data.error" scroll id="item-list">
+    <ng-container *ngIf="!data.loading">
+      <simpler-folder-item
+        *ngFor="let folder of data.folders"
+        [folder]="folder"
+        [@enter]
+      ></simpler-folder-item>
+
+      <simpler-file-item
+        *ngFor="let file of data.files"
+        (filePlay)="onFilePlay(data.files)"
+        [file]="file"
+        [@enter]
+      ></simpler-file-item>
+
+      <!-- TODO -->
+      <div
+        *ngIf="data.files?.length === 0 && data.folders?.length === 0"
+        [@enter]
+        class="w-100 d-flex justify-content-center text-light"
+      >
+        No Data
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="data.loading">
+      <simpler-file-item
+        *ngFor="let skeleton of skeletonItems"
+        [@enter]
+        skeleton
+      ></simpler-file-item>
+    </ng-container>
+  </simpler-list>
+</ng-container>

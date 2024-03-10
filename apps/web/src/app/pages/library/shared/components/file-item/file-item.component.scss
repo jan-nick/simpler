@@ -1,0 +1,24 @@
+.file-cover-image {
+  border-radius: var(--border-radius);
+  opacity: 0.85;
+  transition-property: opacity;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: ease;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.content-start {
+  .play-button {
+    display: none;
+  }
+  &:hover {
+    .cover {
+      display: none;
+    }
+    .play-button {
+      display: initial;
+    }
+  }
+}

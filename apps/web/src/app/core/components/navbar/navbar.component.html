@@ -1,0 +1,31 @@
+<nav
+  *ngIf="{
+    isAuthenticated: isAuthenticated$ | async,
+    state: state$ | async
+  } as data"
+  class="simpler-navbar p-side d-flex justify-content-between align-items-center"
+>
+  <simpler-logo
+    *ngIf="data.state === 'only-logo' || data.state === 'logged-out'"
+    (click)="onClickLogo()"
+    (keyup.enter)="onClickLogo()"
+    [@rotateInOnEnter]
+    tabindex="0"
+  ></simpler-logo>
+
+  <simpler-navbar-logged-in
+    *ngIf="
+      data.state === 'determine-from-auth'
+        ? data.isAuthenticated
+        : data.state === 'logged-in'
+    "
+  ></simpler-navbar-logged-in>
+
+  <simpler-navbar-logged-out
+    *ngIf="
+      data.state === 'determine-from-auth'
+        ? !data.isAuthenticated
+        : data.state === 'logged-out'
+    "
+  ></simpler-navbar-logged-out>
+</nav>

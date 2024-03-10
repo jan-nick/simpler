@@ -1,0 +1,28 @@
+<div
+  *ngIf="copySuccessTooltipVisible"
+  [ngbTooltip]="
+    'pages.library.fileShareDialog.copyLinkButton.copiedTooltip' | translate
+  "
+  [closeDelay]="copySuccessTooltipTime"
+>
+  <ng-container *ngTemplateOutlet="button"></ng-container>
+</div>
+
+<div
+  *ngIf="!copySuccessTooltipVisible"
+  [ngbTooltip]="
+    'pages.library.fileShareDialog.copyLinkButton.tooltip' | translate
+  "
+>
+  <ng-container *ngTemplateOutlet="button"></ng-container>
+</div>
+
+<ng-template #button>
+  <simpler-icon-button
+    (click)="copyLinkToClipboard()"
+    appearance="outline"
+    color="light"
+    icon="link"
+    size="small"
+  ></simpler-icon-button>
+</ng-template>

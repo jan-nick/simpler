@@ -1,0 +1,32 @@
+<ng-container
+  *ngIf="{
+    file: file$ | async,
+    owner: owner$ | async,
+    signedCoverUrl: signedCoverUrl$ | async,
+    libraryFilePlays: libraryFilePlays$ | async,
+    user: user$ | async,
+    loading: loading$ | async
+  } as data"
+>
+  <div *ngIf="data.loading; else loaded" class="lyt-page-center">
+    <simpler-spinner></simpler-spinner>
+  </div>
+
+  <ng-template #loaded>
+    <div class="px-4 py-2">
+      <simpler-file-detail-audio-player
+        [file]="data.file"
+        [owner]="data.owner"
+        [signedCoverUrl]="data.signedCoverUrl"
+        [libraryFilePlays]="data.libraryFilePlays"
+        [user]="data.user"
+      ></simpler-file-detail-audio-player>
+    </div>
+  </ng-template>
+
+  <img
+    *ngIf="data.signedCoverUrl"
+    [src]="data.signedCoverUrl"
+    class="blurred-cover-background"
+  />
+</ng-container>

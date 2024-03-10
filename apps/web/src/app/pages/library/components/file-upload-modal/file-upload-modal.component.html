@@ -1,0 +1,25 @@
+<simpler-tab-group value="new-file-uploads">
+  <simpler-tab
+    value="new-file-uploads"
+    [label]="
+      'pages.library.fileUploadModal.newFileUploads.tabLabel' | translate
+    "
+  >
+    <simpler-new-file-uploads></simpler-new-file-uploads>
+  </simpler-tab>
+
+  <simpler-tab
+    value="completed-file-uploads"
+    [label]="
+      'pages.library.fileUploadModal.completedFileUploads.tabLabel' | translate
+    "
+  >
+    <simpler-completed-file-uploads></simpler-completed-file-uploads>
+  </simpler-tab>
+</simpler-tab-group>
+
+<div class="modal-footer">
+  <simpler-button (click)="close()" appearance="outline" color="light">
+    {{ 'common.actions.close' | translate }}
+  </simpler-button>
+</div>

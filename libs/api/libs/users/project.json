@@ -1,0 +1,27 @@
+{
+  "name": "api-users",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/api/libs/users/src",
+  "prefix": "simpler",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/api/libs/users"],
+      "options": {
+        "jestConfig": "libs/api/libs/users/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/api/libs/users/**/*.ts",
+          "libs/api/libs/users/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

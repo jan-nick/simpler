@@ -1,0 +1,62 @@
+<div class="modal-header">
+  <h4 class="modal-title">
+    {{ 'pages.library.fileShareDialog.dialogTitle' | translate: libraryFile }}
+  </h4>
+</div>
+
+<div class="modal-body d-flex flex-column gap-4">
+  <p>
+    {{ 'pages.library.fileShareDialog.dialogBody' | translate }}
+  </p>
+
+  <div *ngIf="userIsOwner$ | async">
+    <div class="d-flex justify-content-between align-items-center">
+      <p class="m-0 tp-body-1 text-light-darkest">
+        {{
+          'pages.library.fileShareDialog.isPublicToggle.description' | translate
+        }}
+      </p>
+      <simpler-toggle
+        [checked]="libraryFile.isPublic"
+        (change)="setIsPublic()"
+        [label]="
+          'pages.library.fileShareDialog.isPublicToggle.label' | translate
+        "
+        labelPosition="left"
+      ></simpler-toggle>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <p class="m-0 tp-body-1 text-light-darkest">
+        {{
+          'pages.library.fileShareDialog.isDownloadPublicToggle.description'
+            | translate
+        }}
+      </p>
+      <simpler-toggle
+        [checked]="libraryFile.isDownloadPublic"
+        (change)="setIsDownloadPublic()"
+        [label]="
+          'pages.library.fileShareDialog.isDownloadPublicToggle.label'
+            | translate
+        "
+        labelPosition="left"
+      ></simpler-toggle>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center">
+    <p class="m-0 tp-body-2 text-gray-lightest">
+      {{ libraryFileLink }}
+    </p>
+    <simpler-file-link-button
+      [libraryFile]="libraryFile"
+    ></simpler-file-link-button>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <simpler-button (click)="close()" appearance="outline" color="light">
+    {{ 'common.actions.close' | translate }}
+  </simpler-button>
+</div>

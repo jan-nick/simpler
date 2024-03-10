@@ -1,0 +1,33 @@
+<!-- TODO: enable select and trigger on double click  -->
+<!-- multi select would allow multi delete etc. -->
+<simpler-item
+  [routerLink]="['/library/files/', folder.id]"
+  [ngbTooltip]="folder.name"
+  [class.animation-fade-loop]="skeleton"
+>
+  <ng-container start>
+    <ng-container *ngIf="!skeleton">
+      <simpler-icon
+        name="folder"
+        size="small"
+        withBackground
+      ></simpler-icon>
+    </ng-container>
+
+    <simpler-skeleton
+      *ngIf="skeleton"
+      style="width: 32px; height: 32px; border-radius: 8px"
+    ></simpler-skeleton>
+  </ng-container>
+
+  <ng-container title>
+    <ng-container *ngIf="!skeleton">
+      {{ folder.name }}
+    </ng-container>
+
+    <simpler-skeleton
+      *ngIf="skeleton"
+      style="width: 50%; height: 14px"
+    ></simpler-skeleton>
+  </ng-container>
+</simpler-item>

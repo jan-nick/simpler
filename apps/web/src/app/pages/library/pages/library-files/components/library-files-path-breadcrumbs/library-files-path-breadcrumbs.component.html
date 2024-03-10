@@ -1,0 +1,13 @@
+<simpler-breadcrumb-group>
+  <simpler-breadcrumb
+    *ngFor="
+      let folder of libraryFilesService.treeFolders$ | async as folders;
+      index as index
+    "
+    [routerLink]="['/library/files', folder.id ? folder.id : '']"
+    [active]="folders.length - 1 === index"
+    [@enter]
+  >
+    {{ folder.name }}
+  </simpler-breadcrumb>
+</simpler-breadcrumb-group>

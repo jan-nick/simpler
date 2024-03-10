@@ -1,0 +1,122 @@
+<form
+  (ngSubmit)="onSubmit()"
+  [formGroup]="formGroup"
+  class="p-3 d-flex flex-column gap-5"
+>
+  <h6 class="tp-headline-6">
+    {{ 'pages.settings.pages.accountSettings.title' | translate }}
+  </h6>
+
+  <p class="tp-subtitle text-light-dark">
+    {{ 'pages.settings.pages.accountSettings.profile' | translate }}
+  </p>
+
+  <ng-container *ngIf="user$ | async as user">
+    <div class="d-flex align-items-center gap-2">
+      <simpler-avatar
+        (click)="avatarInput.click()"
+        [src]="avatar$ | async"
+        [name]="user.name || user.email"
+        size="large"
+      ></simpler-avatar>
+      <simpler-button
+        (click)="avatarInput.click()"
+        [ngbTooltip]="
+          'pages.settings.pages.accountSettings.editAvatarButton.tooltip'
+            | translate
+        "
+        appearance="outline"
+        color="light"
+      >
+        {{
+          'pages.settings.pages.accountSettings.editAvatarButton' | translate
+        }}
+      </simpler-button>
+
+      <input
+        #avatarInput
+        (change)="onAvatarFileSelect($event)"
+        [accept]="ACCEPTED_AVATAR_FILE_TYPES"
+        type="file"
+        hidden
+      />
+    </div>
+
+    <div *ngIf="formGroup.controls['avatarFile']?.errors as errors">
+      <p *ngFor="let error of errors | keyvalue" class="tp-caption text-danger">
+        {{ 'components.input.errors.' + error.key | translate: error.value }}
+        <br />
+      </p>
+    </div>
+
+    <simpler-input
+      formControlName="name"
+      name="name"
+      type="text"
+      autocomplete="username"
+      [label]="
+        'pages.settings.pages.accountSettings.usernameInput.label' | translate
+      "
+      [placeholder]="
+        'pages.settings.pages.accountSettings.usernameInput.placeholder'
+          | translate
+      "
+    ></simpler-input>
+
+    <div class="d-flex flex-column gap-3">
+      <p class="m-0 tp-subtitle text-light-dark">
+        {{ 'pages.settings.pages.accountSettings.authentication' | translate }}
+      </p>
+
+      <div class="d-flex align-items-center gap-5">
+        <simpler-input
+          [value]="user.email"
+          [label]="
+            'pages.settings.pages.accountSettings.emailInput.label' | translate
+          "
+          disabled
+        ></simpler-input>
+        <!-- <simpler-button
+          (click)="openResetEmailConfirmDialog()"
+          appearance="outline"
+          color="light"
+        >
+          {{
+            'pages.settings.pages.accountSettings.editEmailButton' | translate
+          }}
+        </simpler-button> -->
+      </div>
+      <div>
+        <simpler-button
+          (click)="openResetPasswordConfirmDialog()"
+          appearance="outline"
+          color="light"
+        >
+          {{
+            'pages.settings.pages.accountSettings.editPasswordButton'
+              | translate
+          }}
+        </simpler-button>
+      </div>
+    </div>
+  </ng-container>
+
+  <simpler-divider> </simpler-divider>
+
+  <div class="d-flex gap-3">
+    <simpler-button
+      (click)="resetChanges()"
+      appearance="outline"
+      color="light"
+      type="button"
+    >
+      {{ 'pages.settings.pages.accountSettings.resetButton' | translate }}
+    </simpler-button>
+    <simpler-button
+      [disabled]="formGroup.pristine || formGroup.invalid"
+      type="submit"
+    >
+      {{ 'pages.settings.pages.accountSettings.saveButton' | translate }}
+    </simpler-button>
+  </div>
+</form>

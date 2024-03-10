@@ -1,0 +1,85 @@
+.simpler-progress-bar {
+  display: flex;
+
+  &-large &-inner {
+    height: 8px;
+  }
+  &-small &-inner {
+    height: 2px;
+  }
+
+  &-inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: var(--clr-gray-dark);
+  }
+
+  &-value {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr-light);
+    transform-origin: left;
+    transition: var(--transition-duration-normal) transform ease;
+  }
+
+  &-caption {
+    color: var(--clr-light-darkest);
+
+    &-top-left,
+    &-bottom-left {
+      align-items: flex-start;
+    }
+    &-top-right,
+    &-bottom-right {
+      align-items: flex-end;
+    }
+
+    &-top-left,
+    &-top-right,
+    &-bottom-left,
+    &-bottom-right {
+      flex-direction: column;
+      .simpler-progress-bar-inner {
+        width: 100%;
+      }
+    }
+
+    &-inline-left,
+    &-inline-right {
+      flex-direction: row;
+      .simpler-progress-bar-inner {
+        flex: 1;
+      }
+    }
+
+    &-top-left,
+    &-top-right {
+      .simpler-progress-bar-caption {
+        margin-bottom: 8px;
+      }
+    }
+
+    &-bottom-left,
+    &-bottom-right {
+      .simpler-progress-bar-caption {
+        margin-top: 8px;
+      }
+    }
+
+    &-inline-left {
+      .simpler-progress-bar-caption {
+        margin-right: 8px;
+      }
+    }
+    &-inline-right {
+      .simpler-progress-bar-caption {
+        margin-left: 8px;
+      }
+    }
+    &-inline-left,
+    &-inline-right {
+      align-items: center;
+    }
+  }
+}

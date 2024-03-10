@@ -1,0 +1,48 @@
+<div
+  class="simpler-checkbox"
+  (click)="input.click()"
+  [class.simpler-checkbox-checked]="checked"
+  [class.simpler-checkbox-disabled]="disabled"
+  [class.simpler-checkbox-label-right]="labelPosition === 'right'"
+  [class.simpler-checkbox-label-left]="labelPosition === 'left'"
+>
+  <input
+    #input
+    class="simpler-checkbox-input"
+    (change)="onChange(getValueFromChangeEvent($event)); emitChange()"
+    (click)="onInputClick($event)"
+    (keyup.enter)="onInputClick($event)"
+    [checked]="checked"
+    [value]="value"
+    [name]="name"
+    [required]="required"
+    [disabled]="disabled"
+    [id]="name"
+    type="checkbox"
+  />
+
+  <label
+    *ngIf="label && labelPosition === 'left'"
+    class="simpler-checkbox-label tp-label"
+    [for]="name"
+  >
+    {{ label }}
+  </label>
+
+  <div class="simpler-checkbox-icon">
+    <svg width="20px" height="20px" viewBox="0 0 20 20">
+      <path
+        d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"
+      ></path>
+      <polyline points="4 11 8 15 16 6"></polyline>
+    </svg>
+  </div>
+
+  <label
+    *ngIf="label && labelPosition === 'right'"
+    class="simpler-checkbox-label tp-label"
+    [for]="name"
+  >
+    {{ label }}
+  </label>
+</div>

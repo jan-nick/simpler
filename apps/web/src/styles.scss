@@ -1,0 +1,67 @@
+@import 'scss/index';
+
+// @import '~bootstrap/scss/bootstrap';
+
+// Configuration
+// @import "functions";
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+
+// Helpers
+@import 'bootstrap/scss/helpers';
+
+// Utilities
+@import 'bootstrap/scss/utilities/api';
+
+// TODO: Only import necessary components
+
+// Configuration
+// @import "functions";
+// @import "variables";
+// @import "mixins";
+// @import "utilities";
+
+// Layout & components
+@import 'bootstrap/scss/root';
+// @import "reboot";
+// @import "type";
+// @import "images";
+// @import "containers";
+// @import "grid";
+// @import "tables";
+// @import "forms";
+// @import "buttons";
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/dropdown';
+// @import "button-group";
+// @import "nav";
+// @import "navbar";
+// @import "card";
+// @import "accordion";
+// @import "breadcrumb";
+// @import "pagination";
+// @import "badge";
+// @import "alert";
+// @import "progress";
+// @import "list-group";
+// @import "close";
+// @import "toasts";
+@import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/tooltip';
+// @import "popover";
+// @import "carousel";
+// @import "spinners";
+@import 'bootstrap/scss/offcanvas';
+
+.library-sidebar {
+  bottom: 90px;
+}
+#waveform {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--standard-border-radius);
+  wave wave {
+    background-color: var(--secondary);
+  }
+}

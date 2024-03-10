@@ -1,0 +1,23 @@
+.upload-area {
+  height: 240px;
+  width: 100%;
+
+  gap: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: var(--clr-gray-transparent-1);
+  border-radius: 16px;
+  border: 2px dashed var(--clr-dark-lightest);
+  box-shadow: var(--shadow);
+
+  text-align: center;
+
+  transition: var(--transition-duration-normal) background-color ease;
+
+  &.file-over {
+    background-color: var(--clr-gray-transparent-3);
+  }
+}

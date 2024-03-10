@@ -1,0 +1,16 @@
+.animation-fade-loop {
+  animation: animation-fade-loop var(--transition-duration-longer) ease-in-out
+    infinite;
+}
+
+@keyframes animation-fade-loop {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}

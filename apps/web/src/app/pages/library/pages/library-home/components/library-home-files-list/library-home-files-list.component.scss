@@ -1,0 +1,21 @@
+.horizontal-list {
+  --gap: 1rem;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: var(--gap);
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-left: calc(var(--gap) * 2);
+  scroll-padding-right: calc(var(--gap) * 2);
+  scroll-padding-inline: calc(var(--gap) * 2);
+
+  @media (prefers-reduced-motion: no-preference) {
+    & {
+      scroll-behavior: smooth;
+    }
+  }
+}

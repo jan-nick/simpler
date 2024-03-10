@@ -1,0 +1,140 @@
+.simpler-toggle {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &:active &-icon {
+    opacity: 0.9;
+    transform: scale(0.92);
+  }
+
+  &-disabled {
+    pointer-events: none;
+  }
+  &-disabled &-icon {
+    &-bar {
+      background-color: var(--clr-dark-lighter);
+    }
+    &-thumb {
+      background-color: var(--clr-gray);
+    }
+  }
+  &-disabled &-label {
+    color: var(--clr-gray);
+  }
+
+  &-disabled.simpler-toggle-checked &-icon {
+    .simpler-toggle-icon-bar {
+      background-color: var(--clr-primary-darkest);
+    }
+    .simpler-toggle-icon-thumb {
+      background-color: var(--clr-light-darkest);
+    }
+  }
+
+  &-checked &-icon {
+    .simpler-toggle-icon-bar {
+      background-color: var(--clr-primary);
+    }
+    .simpler-toggle-icon-thumb {
+      left: 50%;
+
+      // Ripple
+      &:before {
+        transform: scale(4);
+        opacity: 0;
+        transition: all var(--transition-duration-long) ease;
+      }
+    }
+    &:hover {
+      .simpler-toggle-icon-bar {
+        background-color: var(--clr-primary-lightest);
+      }
+    }
+  }
+
+  &,
+  &-label,
+  &-icon {
+    cursor: pointer;
+  }
+
+  &-label-right &-label {
+    margin-left: 16px;
+  }
+
+  &-label-left &-label {
+    margin-right: 16px;
+  }
+
+  &-input {
+    position: absolute;
+    opacity: 0;
+
+    &:focus-visible + .simpler-toggle-icon {
+      outline-color: var(--clr-primary-transparent-1);
+      outline-offset: 2px;
+    }
+  }
+
+  &-icon {
+    width: 48px;
+    height: 24px;
+    outline: 2px solid transparent;
+    border-radius: 100px;
+    position: relative;
+    transition-property: outline, opacity, transform;
+    transition-timing-function: ease;
+    transition-duration: var(--transition-duration-short);
+
+    &:hover &-bar {
+      background-color: var(--clr-gray);
+    }
+
+    &-thumb,
+    &-bar {
+      position: absolute;
+      border-radius: 100px;
+    }
+
+    &-thumb {
+      top: 2px;
+      bottom: 2px;
+      right: auto;
+      left: 4px;
+      height: 20px;
+      width: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: var(--clr-light);
+      z-index: 1;
+      transition-property: left, right;
+      transition-timing-function: ease;
+      transition-duration: var(--transition-duration-short);
+
+      // Ripple
+      &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: var(--clr-primary-transparent-1);
+        display: block;
+        transform: scale(0);
+        opacity: 1;
+        border-radius: 50%;
+      }
+    }
+
+    &-bar {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--clr-gray-darkest);
+      transition-property: background-color;
+      transition-timing-function: ease;
+      transition-duration: var(--transition-duration-normal);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import '../../../../styles/src/lib/scss/variables/colors';
+
+:host {
+  display: inline-block;
+}
+
+.simpler-breadcrumb {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+
+  &-active &-label {
+    color: var(--clr-light-darkest);
+    &:hover {
+      color: var(--clr-light);
+    }
+  }
+
+  &-label {
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: var(--clr-gray-lightest);
+    cursor: pointer;
+    transition-property: color, background-color;
+    transition-duration: var(--transition-duration-shorter);
+    transition-timing-function: ease;
+    &:hover {
+      color: var(--clr-light);
+      background-color: var(--clr-gray-transparent-2);
+    }
+  }
+
+  simpler-icon {
+    color: var(--clr-gray);
+  }
+}

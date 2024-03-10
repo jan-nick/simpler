@@ -1,0 +1,25 @@
+<div class="early-access-form">
+  <h1 class="tp-headline-4">
+    {{ 'pages.auth.signUp.earlyAccess.headerTitle' | translate }}
+  </h1>
+  <p class="mb-4 text-light-darkest">
+    {{ 'pages.auth.signUp.earlyAccess.description' | translate }}
+  </p>
+  <simpler-input
+    class="mb-4"
+    [(ngModel)]="earlyAccessCode"
+    (inputEnter)="earlyAccessService.submitEarlyAccess(earlyAccessCode)"
+    type="text"
+    [label]="'pages.auth.signUp.earlyAccess.accessCodeInputLabel' | translate"
+    [placeholder]="
+      'pages.auth.signUp.earlyAccess.accessCodeInputPlaceholder' | translate
+    "
+  ></simpler-input>
+
+  <simpler-button
+    (click)="earlyAccessService.submitEarlyAccess(earlyAccessCode)"
+    class="w-100"
+  >
+    {{ 'common.actions.confirm' | translate }}
+  </simpler-button>
+</div>

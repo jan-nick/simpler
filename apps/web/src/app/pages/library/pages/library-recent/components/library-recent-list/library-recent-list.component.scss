@@ -1,0 +1,6 @@
+simpler-list#item-list {
+  height: calc(100vh - 214px);
+  :last-child {
+    margin-bottom: 124px;
+  }
+}

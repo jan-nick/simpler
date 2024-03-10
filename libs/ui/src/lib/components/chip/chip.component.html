@@ -1,0 +1,20 @@
+<div
+  class="simpler-chip tp-body-2"
+  [ngClass]="[
+    'simpler-chip-' + color,
+    icon ? 'simpler-chip-icon-' + iconPosition : ''
+  ]"
+  [tabIndex]="tabIndex"
+>
+  <ng-container *ngIf="icon && iconPosition === 'left'">
+    <simpler-icon [name]="icon" size="small"></simpler-icon>
+  </ng-container>
+
+  <span class="simpler-chip-text">
+    <ng-content></ng-content>
+  </span>
+
+  <ng-container *ngIf="icon && iconPosition === 'right'">
+    <simpler-icon [name]="icon" size="small"></simpler-icon>
+  </ng-container>
+</div>

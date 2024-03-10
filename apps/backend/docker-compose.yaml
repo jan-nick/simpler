@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14
+    container_name: backend-db
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_DB=${POSTGRES_DB}
+
+  # s3:
+  #   image: localstack/localstack:latest
+  #   container_name: 'localstack'
+  #   ports:
+  #     - '4566:4566'
+
+  #   environment:
+  #     - SERVICES=s3
+  #     - DEBUG=0
+  #   volumes:
+  #     - './.localstack:/var/lib/localstack'
+  #     - '/var/run/docker.sock:/var/run/docker.sock'
+
+  # create_bucket:
+  #   image: curlimages/curl
+  #   depends_on:
+  #     - s3
+  #   command: sh -c "echo waiting for localstack; until curl -s s3:4566; do echo 'waiting for localstack...'; sleep 5; done; curl -s -X PUT s3:4566/${STORAGE_BUCKET_NAME}"
+
+volumes:
+  postgres:
+    name: backend

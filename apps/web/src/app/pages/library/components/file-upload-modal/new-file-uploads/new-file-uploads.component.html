@@ -1,0 +1,36 @@
+<div class="modal-body d-flex flex-column">
+  <simpler-upload-area
+    (selectFiles)="onSelectFiles($event)"
+    class="my-3"
+  ></simpler-upload-area>
+
+  <!-- TODO -->
+  <ng-container *ngFor="let error of uploadErrors | keyvalue">
+    <p *ngIf="error.value" class="my-3">
+      {{ 'library.validationErrors.' + error.key | translate }}
+    </p>
+    <br />
+  </ng-container>
+
+  <ng-container *ngIf="libraryUploadService.activeUploads$ | async as uploads">
+    <div *ngIf="uploads.length" [@fadeOutOnLeave]>
+      <h6 class="tp-body-2">
+        {{
+          'pages.library.fileUploadModal.newFileUploads.uploadListHeading'
+            | translate: { pending: uploads.length }
+        }}
+      </h6>
+
+      <simpler-list
+        [ngStyle]="{ height: uploads.length > 3 ? '136px' : 'auto' }"
+        scroll
+      >
+        <simpler-upload-item
+          *ngFor="let upload of uploads"
+          [upload]="upload"
+          [@fadeOutOnLeave]
+        ></simpler-upload-item>
+      </simpler-list>
+    </div>
+  </ng-container>
+</div>

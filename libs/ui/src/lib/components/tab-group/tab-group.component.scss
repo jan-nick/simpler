@@ -1,0 +1,53 @@
+@import '../../../../styles/src/lib/scss/variables/colors';
+
+:host {
+  display: block;
+}
+
+.simpler-tab-group {
+  &-header {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+
+    .simpler-tab-button {
+      position: relative;
+      height: 48px;
+      // min-width: ;
+      flex: 1;
+      color: var(--clr-gray-lightest);
+      background-color: var(--clr-dark);
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 2px solid var(--clr-gray-transparent-1);
+      cursor: pointer;
+      transition-property: color, background-color, border-bottom-color;
+      transition-duration: var(--transition-duration-shorter);
+      transition-timing-function: ease;
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--clr-dark-lighter);
+      }
+
+      &:active {
+        border-bottom-color: var(--clr-light-transparent-1);
+        background-color: var(--clr-dark-lightest);
+      }
+
+      &-selected {
+        color: var(--clr-light);
+      }
+    }
+
+    .simpler-tab-selected-indicator {
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      background-color: var(--clr-primary);
+      transition: var(--transition-duration-short) transform ease;
+    }
+  }
+}

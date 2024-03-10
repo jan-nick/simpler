@@ -1,0 +1,52 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@simpler-constants": ["constants/index.ts"],
+      "@simpler-env": ["env/environment.ts"],
+      "@simpler/api": ["libs/api/src/index.ts"],
+      "@simpler/api/auth": ["libs/api/libs/auth/src/index.ts"],
+      "@simpler/api/library-files": [
+        "libs/api/libs/library-files/src/index.ts"
+      ],
+      "@simpler/api/library-folders": [
+        "libs/api/libs/library-folders/src/index.ts"
+      ],
+      "@simpler/api/library-file-plays": [
+        "libs/api/libs/library-file-plays/src/index.ts"
+      ],
+      "@simpler/api/storage": ["libs/api/libs/storage/src/index.ts"],
+      "@simpler/api/users": ["libs/api/libs/users/src/index.ts"],
+      "@simpler/auth": ["libs/auth/src/index.ts"],
+      "@simpler/authorization/backend": [
+        "libs/authorization/backend/src/index.ts"
+      ],
+      "@simpler/authorization/core": ["libs/authorization/core/src/index.ts"],
+      "@simpler/library-files": ["libs/library-files/src/index.ts"],
+      "@simpler/library-folders": ["libs/library-folders/src/index.ts"],
+      "@simpler/library-file-plays": ["libs/library-file-plays/src/index.ts"],
+      "@simpler/testing": ["libs/testing/src/index.ts"],
+      "@simpler/types": ["libs/types/src/index.ts"],
+      "@simpler/ui": ["libs/ui/src/index.ts"],
+      "@simpler/ui/styles": ["libs/ui/styles/src/index.ts"],
+      "@simpler/users": ["libs/users/src/index.ts"],
+      "@simpler/utils": ["libs/utils/src/index.ts"],
+      "@simpler/utils/backend": ["libs/utils/backend/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

@@ -1,0 +1,85 @@
+<simpler-sidenav>
+  <div class="h-100 d-flex flex-column justify-content-between">
+    <simpler-list>
+      <simpler-button
+        (click)="openFileUploadModal()"
+        [ngbTooltip]="'pages.library.sidenav.uploadButtonTooltip' | translate"
+        icon="upload"
+        class="mb-2"
+      >
+        {{ 'pages.library.sidenav.uploadButton' | translate }}
+      </simpler-button>
+      <simpler-nav-button routerLink="home" icon="house-door">
+        {{ 'pages.library.sidenav.homeNavButton' | translate }}
+      </simpler-nav-button>
+      <!-- TODO: Folder tree -->
+      <simpler-nav-button routerLink="files" icon="file-earmark-play">
+        {{ 'pages.library.sidenav.filesNavButton' | translate }}
+      </simpler-nav-button>
+      <simpler-nav-button routerLink="recent" icon="clock-history">
+        {{ 'pages.library.sidenav.recentNavButton' | translate }}
+      </simpler-nav-button>
+    </simpler-list>
+
+    <simpler-list>
+      <div
+        *ngIf="(uploadProgress$ | async) != null"
+        [@fadeInOnEnter]
+        [@fadeOutOnLeave]
+      >
+        <simpler-nav-button
+          (click)="openFileUploadModal()"
+          [ngbTooltip]="
+            'pages.library.sidenav.uploadProgressNavButton.tooltip'
+              | translate: { number: (activeUploads$ | async)?.length }
+          "
+          icon="cloud-upload"
+          class="w-100 mb-2"
+        >
+          {{ 'pages.library.sidenav.uploadProgressNavButton' | translate }}
+        </simpler-nav-button>
+        <simpler-progress-bar
+          [value]="uploadProgress$ | async"
+          [caption]="(uploadProgress$ | async) + '%'"
+          captionPosition="inline-left"
+          size="small"
+        ></simpler-progress-bar>
+
+        <simpler-divider class="my-3"></simpler-divider>
+      </div>
+      <div>
+        <simpler-nav-button disabled icon="hdd" class="w-100 mb-2">
+          {{ 'pages.library.sidenav.storageNavButton' | translate }}
+        </simpler-nav-button>
+
+        <ng-container
+          *ngIf="{
+            used: userStorage$ | async,
+            progress: storageProgress$ | async
+          } as storage"
+        >
+          <simpler-progress-bar
+            *ngIf="storage.used != null && storage.progress != null"
+            [value]="storage.progress"
+            [caption]="
+              'pages.library.sidenav.storageProgressCaption'
+                | translate
+                  : {
+                      used: storage.used,
+                      max: maxUserStorage
+                    }
+            "
+            captionPosition="inline-left"
+            size="small"
+          ></simpler-progress-bar>
+
+          <simpler-skeleton
+            *ngIf="storage.used == null"
+            style="height: 7px"
+            class="my-1"
+          ></simpler-skeleton>
+        </ng-container>
+      </div>
+    </simpler-list>
+  </div>
+</simpler-sidenav>

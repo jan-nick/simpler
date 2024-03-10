@@ -1,0 +1,89 @@
+<ng-container
+  *ngIf="{
+    currentTime: audioPlayerService.currentTime$ | async,
+    duration: audioPlayerService.duration$ | async,
+    file: audioPlayerService.activeFile$ | async,
+    nextFile: audioPlayerService.nextFile$ | async,
+    previousFile: audioPlayerService.previousFile$ | async
+  } as audioPlayer"
+>
+  <div class="gap-2 d-flex justify-content-center">
+    <simpler-icon-button
+      (click)="audioPlayerService.playPreviousInQueue()"
+      [disabled]="!audioPlayer.previousFile"
+      [ngbTooltip]="
+        'components.audioPlayer.playPreviousButton.tooltip' | translate
+      "
+      appearance="transparent"
+      color="light"
+      icon="skip-start"
+      size="small"
+    >
+    </simpler-icon-button>
+
+    <simpler-icon-button
+      (click)="audioPlayerService.resume()"
+      *ngIf="audioPlayerService.paused$ | async"
+      [disabled]="!audioPlayer.file"
+      [ngbTooltip]="
+        'components.audioPlayer.playButton.tooltip'
+          | translate: audioPlayer.file
+      "
+      appearance="solid"
+      color="light"
+      icon="play-fill"
+      size="small"
+    >
+    </simpler-icon-button>
+    <simpler-icon-button
+      (click)="audioPlayerService.pause()"
+      *ngIf="(audioPlayerService.paused$ | async) === false"
+      [disabled]="!audioPlayer.file"
+      [ngbTooltip]="
+        'components.audioPlayer.pauseButton.tooltip'
+          | translate: audioPlayer.file
+      "
+      appearance="solid"
+      color="light"
+      icon="pause"
+      size="small"
+    >
+    </simpler-icon-button>
+
+    <simpler-icon-button
+      (click)="audioPlayerService.playNextInQueue()"
+      [disabled]="!audioPlayer.nextFile"
+      [ngbTooltip]="'components.audioPlayer.playNextButton.tooltip' | translate"
+      appearance="transparent"
+      color="light"
+      icon="skip-end"
+      size="small"
+    >
+    </simpler-icon-button>
+  </div>
+
+  <div
+    class="px-6 gap-2 d-flex justify-content-between align-items-center tp-overline"
+  >
+    <div>
+      {{ audioPlayer.currentTime || 0 | round | formatSeconds }}
+    </div>
+
+    <simpler-slider
+      (change)="
+        audioPlayerService.setCurrentTime(
+          ($event.value * (audioPlayer.duration || 0)) / 100
+        )
+      "
+      [value]="
+        ((audioPlayer.currentTime || 0) / (audioPlayer.duration || 0)) * 100
+      "
+      [disabled]="audioPlayer.file == null"
+      class="flex-fill"
+    ></simpler-slider>
+
+    <div>
+      {{ audioPlayer.duration || 0 | round | formatSeconds }}
+    </div>
+  </div>
+</ng-container>

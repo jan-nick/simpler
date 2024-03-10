@@ -1,0 +1,27 @@
+{
+  "name": "api-library-folders",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/api/libs/library-folders/src",
+  "prefix": "simpler",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/api/libs/library-folders"],
+      "options": {
+        "jestConfig": "libs/api/libs/library-folders/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/api/libs/library-folders/**/*.ts",
+          "libs/api/libs/library-folders/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

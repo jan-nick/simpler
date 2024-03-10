@@ -1,0 +1,126 @@
+@import '../../../../styles/src/lib/scss/variables/colors';
+
+:host {
+  display: inline-block;
+}
+
+.simpler-button {
+  padding-inline: 16px;
+  height: 48px;
+  width: 100%;
+
+  position: relative;
+
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: var(--border-radius);
+  outline-color: transparent;
+
+  cursor: pointer;
+
+  transition-property: background-color, outline-color, opacity, transform;
+  transition-duration: var(--transition-duration-shorter);
+  transition-timing-function: ease;
+
+  simpler-spinner {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &:focus-visible {
+    outline-style: solid;
+    outline-offset: 2px;
+    outline-width: 2px;
+  }
+
+  &-disabled {
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &-loading {
+    pointer-events: none;
+  }
+
+  &-solid {
+    box-shadow: var(--shadow);
+
+    &.simpler-button-disabled[disabled] {
+      color: var(--clr-gray-darkest);
+      background-color: var(--clr-gray-lightest);
+    }
+
+    @each $color in $base-color-names {
+      &.simpler-button-#{$color} {
+        background-color: var(--clr-#{$color});
+        color: var(--clr-#{$color}-contrast);
+
+        &:not(.simpler-button-disabled):active {
+          background-color: var(--clr-#{$color}-darker);
+        }
+        &:hover {
+          background-color: var(--clr-#{$color}-lighter);
+        }
+        &:focus-visible {
+          outline-color: var(--clr-#{$color}-transparent-3);
+        }
+      }
+    }
+  }
+
+  &-outline {
+    &.simpler-button-disabled[disabled] {
+      color: var(--clr-gray-darkest);
+      border-color: var(--clr-gray-transparent-1);
+    }
+
+    @each $color in $base-color-names {
+      &.simpler-button-#{$color} {
+        border: 1px solid var(--clr-gray-transparent-3);
+        background-color: transparent;
+        color: var(--clr-#{$color});
+
+        &:not(.simpler-button-disabled):active {
+          color: var(--clr-#{$color}-darkest);
+          background-color: var(--clr-#{$color}-transparent-1);
+        }
+        &:hover {
+          color: var(--clr-#{$color}-lightest);
+          background-color: var(--clr-#{$color}-transparent-1);
+        }
+        &:focus-visible {
+          outline-color: var(--clr-#{$color}-transparent-3);
+        }
+      }
+    }
+  }
+
+  &-transparent {
+    &.simpler-button-disabled[disabled] {
+      color: var(--clr-gray-darkest);
+    }
+
+    @each $color in $base-color-names {
+      &.simpler-button-#{$color} {
+        background-color: transparent;
+        color: var(--clr-#{$color});
+
+        &:not(.simpler-button-disabled):active {
+          color: var(--clr-#{$color}-darkest);
+          background-color: var(--clr-#{$color}-transparent-1);
+        }
+        &:hover {
+          color: var(--clr-#{$color}-lightest);
+          background-color: var(--clr-#{$color}-transparent-1);
+        }
+        &:focus-visible {
+          outline-color: var(--clr-#{$color}-transparent-3);
+        }
+      }
+    }
+  }
+}

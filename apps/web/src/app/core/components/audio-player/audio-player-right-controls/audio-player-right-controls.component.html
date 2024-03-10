@@ -1,0 +1,55 @@
+
+
+<div
+  *ngIf="{
+    volume: audioPlayerService.volume$ | async,
+    muted: audioPlayerService.muted$ | async
+  } as player"
+  class="gap-2 d-flex flex-1 justify-content-end align-items-center"
+>
+  <div class="gap-1 d-flex align-items-center">
+    <simpler-icon-button
+      *ngIf="
+        !player.muted && player.volume && player.volume > 0;
+        else muteButton
+      "
+      (click)="audioPlayerService.toggleMute(true)"
+      [ngbTooltip]="'components.audioPlayer.muteButton.tooltip' | translate"
+      appearance="transparent"
+      color="light"
+      [icon]="player.volume > 50 ? 'volume-up' : 'volume-down'"
+      size="small"
+    >
+    </simpler-icon-button>
+
+    <ng-template #muteButton>
+      <simpler-icon-button
+        (click)="audioPlayerService.toggleMute(false)"
+        [ngbTooltip]="'components.audioPlayer.unmuteButton.tooltip' | translate"
+        appearance="transparent"
+        color="light"
+        icon="volume-mute"
+        size="small"
+      >
+      </simpler-icon-button
+    ></ng-template>
+
+    <simpler-slider
+      (input)="audioPlayerService.setVolume($event.value)"
+      [value]="player.volume"
+      [ngbTooltip]="'components.audioPlayer.volumeSlider.tooltip' | translate"
+      id="volume-slider"
+    ></simpler-slider>
+  </div>
+
+  <!-- <a [href]="fileUrl" target="_blank" rel="noopener noreferrer">
+    <simpler-icon-button
+      [disabled]="loading"
+      appearance="transparent"
+      color="light"
+      icon="download"
+      size="small"
+    >
+    </simpler-icon-button>
+  </a> -->
+</div>

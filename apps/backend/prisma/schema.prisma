@@ -1,0 +1,77 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model LibraryFile {
+  id String @unique() @default(uuid())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+  name     String
+  url      String
+  coverUrl String?
+
+  libraryFolder   LibraryFolder? @relation(fields: [libraryFolderId], references: [id], onDelete: Cascade)
+  libraryFolderId String?
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  isPublic         Boolean     @default(false)
+  isDownloadPublic Boolean     @default(false)
+  libraryFilePlays       LibraryFilePlay[]
+}
+
+model LibraryFilePlay {
+  id String @unique() @default(uuid())
+
+  playedAt DateTime @default(now())
+
+  libraryFileId String?
+  libraryFile   LibraryFile? @relation(fields: [libraryFileId], references: [id], onDelete: Cascade)
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+}
+
+model LibraryFolder {
+  id String @unique() @default(uuid())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+  name String
+
+  children LibraryFolder[] @relation("libraryFolders")
+  parent   LibraryFolder?  @relation("libraryFolders", fields: [parentId], references: [id], onDelete: Cascade)
+  parentId String?
+
+  libraryFiles LibraryFile[]
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id String @unique() @default(uuid())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+  refreshToken String?
+
+  avatar   String?
+  email    String  @unique
+  name     String?
+  password String
+
+  libraryFiles   LibraryFile[]
+  libraryFolders LibraryFolder[]
+  libraryFilePlays     LibraryFilePlay[]
+}

@@ -1,0 +1,24 @@
+<div class="simpler-card" [class.simpler-card-has-icon]="icon">
+  <div class="simpler-card-content">
+    <simpler-icon
+      *ngIf="icon"
+      [name]="icon"
+      class="simpler-card-icon"
+      withBackground
+    ></simpler-icon>
+
+    <div class="simpler-card-text">
+      <p *ngIf="subtitle" class="simpler-card-subtitle tp-overline">
+        {{ subtitle }}
+      </p>
+
+      <h6 *ngIf="title" class="simpler-card-title tp-headline-6">
+        {{ title }}
+      </h6>
+
+      <p *ngIf="body" class="simpler-card-body tp-body-2">
+        {{ body }}
+      </p>
+    </div>
+  </div>
+</div>

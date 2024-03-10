@@ -1,0 +1,19 @@
+body,
+body * {
+  outline: none;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: var(--clr-light-transparent-1);
+    &:hover {
+      background-color: var(--clr-gray-transparent-3);
+    }
+  }
+}

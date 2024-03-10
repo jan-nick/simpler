@@ -1,0 +1,13 @@
+<simpler-icon-button
+  *ngIf="
+    (userIsOwner$ | async) ||
+    (libraryFile && libraryFile.isPublic && libraryFile.isDownloadPublic)
+  "
+  (click)="downloadFile()"
+  [loading]="downloading"
+  [ngbTooltip]="'pages.library.downloadFileButton.tooltip' | translate"
+  appearance="outline"
+  color="light"
+  icon="download"
+  size="small"
+></simpler-icon-button>

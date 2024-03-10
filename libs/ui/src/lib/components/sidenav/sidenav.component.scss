@@ -1,0 +1,23 @@
+@import '../../../../styles/src/lib/scss/variables/colors';
+
+:host {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  display: block;
+}
+
+.simpler-sidenav {
+  width: var(--sidenav-width);
+  height: 100%;
+  padding-bottom: var(--audio-player-height);
+  display: flex;
+
+  &-content {
+    width: 100%;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+}

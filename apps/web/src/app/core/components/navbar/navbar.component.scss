@@ -1,0 +1,21 @@
+:host {
+  height: var(--navbar-height);
+  display: block;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.simpler-navbar {
+  height: 100%;
+  padding: 0 var(--side-spacing);
+
+  simpler-logo {
+    box-shadow: var(--shadow);
+  }
+
+  simpler-navbar-logged-in {
+    width: 100%;
+  }
+}

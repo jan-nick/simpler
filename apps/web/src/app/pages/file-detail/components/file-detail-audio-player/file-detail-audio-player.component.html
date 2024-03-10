@@ -1,0 +1,84 @@
+<div class="d-flex mt-6 px-5 pt-6 pb-3">
+  <div class="w-100 gap-5 d-flex flex-column">
+    <div class="w-100 gap-4 d-flex align-items-end">
+      <div *ngIf="signedCoverUrl" class="file-cover">
+        <img [src]="signedCoverUrl" alt="" />
+      </div>
+
+      <div class="gap-3 d-flex flex-fill align-items-center">
+        <ng-container
+          *ngIf="{
+            isActive: isActive$ | async,
+            paused: audioPlayerService.paused$ | async
+          } as audioPlayer"
+        >
+          <simpler-icon-button
+            *ngIf="
+              !audioPlayer.isActive ||
+              (audioPlayer.isActive && audioPlayer.paused)
+            "
+            (click)="file && audioPlayerService.play({ file: file })"
+            [ngbTooltip]="
+              'components.audioPlayer.playButton.tooltip'
+                | translate: { name: file?.name }
+            "
+            appearance="outline"
+            color="light"
+            icon="play-fill"
+            size="large"
+          >
+          </simpler-icon-button>
+          <simpler-icon-button
+            *ngIf="audioPlayer.isActive && !audioPlayer.paused"
+            (click)="audioPlayerService.pause()"
+            [ngbTooltip]="
+              'components.audioPlayer.pauseButton.tooltip'
+                | translate: { name: file?.name }
+            "
+            appearance="outline"
+            color="light"
+            icon="pause"
+            size="large"
+          >
+          </simpler-icon-button>
+        </ng-container>
+
+        <div class="d-flex flex-column justify-content-center">
+          <h4 class="mb-1 tp-headline-4">{{ file?.name }}</h4>
+          <h6 class="m-0 tp-body-1 text-gray-lightest">
+            {{ owner?.name || owner?.email }}
+          </h6>
+        </div>
+      </div>
+
+      <div class="d-flex gap-2">
+        <simpler-library-file-play
+          [libraryFilePlays]="libraryFilePlays"
+        ></simpler-library-file-play>
+        <simpler-file-share-button
+          [libraryFile]="file"
+        ></simpler-file-share-button>
+        <simpler-file-download-button
+          [libraryFile]="file"
+        ></simpler-file-download-button>
+
+        <simpler-icon-button
+          *ngIf="userIsOwner"
+          [routerLink]="'/library/files/' + (file?.libraryFolderId || '')"
+          [ngbTooltip]="
+            'pages.fileDetail.openFileInLibraryButton.tooltip' | translate
+          "
+          appearance="outline"
+          color="light"
+          icon="arrow-up-right"
+          size="small"
+        >
+        </simpler-icon-button>
+      </div>
+    </div>
+
+    <simpler-audio-player-waveform
+      [file]="file"
+    ></simpler-audio-player-waveform>
+  </div>
+</div>

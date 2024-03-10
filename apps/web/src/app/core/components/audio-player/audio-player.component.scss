@@ -1,0 +1,29 @@
+@use 'scss/index';
+
+:host {
+  height: var(--audio-player-height);
+  display: block;
+}
+
+.audio-player {
+  @extend .overlay-effects;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: var(--audio-player-height);
+  padding: 1rem 2rem;
+
+  gap: 3rem;
+  display: flex;
+  align-items: center;
+
+  background-color: var(--clr-dark-transparent-4);
+}
+
+simpler-audio-player-left-controls,
+simpler-audio-player-right-controls {
+  width: 320px;
+}

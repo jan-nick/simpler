@@ -1,0 +1,27 @@
+{
+  "name": "library-file-plays",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/library-file-plays/src",
+  "prefix": "simpler",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/library-file-plays"],
+      "options": {
+        "jestConfig": "libs/library-file-plays/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/library-file-plays/**/*.ts",
+          "libs/library-file-plays/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

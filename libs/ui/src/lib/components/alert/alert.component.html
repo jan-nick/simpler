@@ -1,0 +1,22 @@
+<div
+  *ngIf="!dismissed"
+  class="simpler-alert tp-body-1"
+  [class.simpler-alert-dismissable]="dismissable"
+  [ngClass]="['simpler-alert-' + color]"
+  [@fadeOutDownOnLeave]
+>
+  <span class="simpler-alert-message">
+    <ng-content></ng-content>
+  </span>
+
+  <ng-container *ngIf="dismissable">
+    <simpler-button
+      (click)="dismiss()"
+      class="simpler-alert-dismiss-button"
+      appearance="outline"
+      color="light"
+    >
+      {{ dismissText }}
+    </simpler-button>
+  </ng-container>
+</div>

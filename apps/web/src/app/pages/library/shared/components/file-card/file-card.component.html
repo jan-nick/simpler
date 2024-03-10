@@ -1,0 +1,59 @@
+<!-- TODO: Tabindex -->
+<div
+  (click)="open($event)"
+  (mouseenter)="hover = true"
+  (mouseleave)="hover = false"
+>
+  <div class="mb-2 file-cover-container" [class.animation-fade-loop]="skeleton">
+    <ng-container *ngIf="!skeleton">
+      <div class="d-flex">
+        <simpler-file-cover
+          [coverUrl]="file.coverUrl"
+          size="largest"
+        ></simpler-file-cover>
+      </div>
+
+      <simpler-icon-button
+        *ngIf="hover"
+        (click)="play()"
+        [ngbTooltip]="
+          'components.audioPlayer.playButton.tooltip' | translate: file
+        "
+        color="light"
+        icon="play-fill"
+        size="small"
+        class="play-button"
+      >
+      </simpler-icon-button>
+    </ng-container>
+  </div>
+
+  <div *ngIf="!skeleton" class="text-break">
+    <div [ngbTooltip]="file.name" class="w-100 tp-subtitle text-light">
+      {{ file.name }}
+    </div>
+
+    <div
+      *ngIf="file.updatedAt"
+      [ngbTooltip]="file.updatedAt | dfnsFormat: 'Pp'"
+      class="w-100 tp-caption text-light-darkest"
+    >
+      {{
+        (file.updatedAt | dfnsFormatDistanceToNow) +
+          ' ' +
+          ('common.dateTime.ago' | translate)
+      }}
+    </div>
+  </div>
+
+  <div *ngIf="skeleton" class="mt-2 gap-2 d-flex flex-column">
+    <simpler-skeleton
+      color="dark-light"
+      style="width: 64px; height: 12px"
+    ></simpler-skeleton>
+    <simpler-skeleton
+      color="dark-lightest"
+      style="width: 120px; height: 12px"
+    ></simpler-skeleton>
+  </div>
+</div>

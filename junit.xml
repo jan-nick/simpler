@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="346" failures="0" errors="0" time="30.252">
+  <testsuite name="LibraryFileEffects" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="5.716" tests="1">
+    <testcase classname="LibraryFileEffects should be created" name="LibraryFileEffects should be created" time="0.037">
+    </testcase>
+  </testsuite>
+  <testsuite name="UserEffects" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="5.893" tests="1">
+    <testcase classname="UserEffects should be created" name="UserEffects should be created" time="0.051">
+    </testcase>
+  </testsuite>
+  <testsuite name="ApiService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="6.03" tests="1">
+    <testcase classname="ApiService should be created" name="ApiService should be created" time="0.036">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFolderEffects" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="6.114" tests="1">
+    <testcase classname="LibraryFolderEffects should be created" name="LibraryFolderEffects should be created" time="0.042">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignedInGuard" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="6.125" tests="1">
+    <testcase classname="SignedInGuard should be created" name="SignedInGuard should be created" time="0.041">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignedOutGuard" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="6.351" tests="1">
+    <testcase classname="SignedOutGuard should be created" name="SignedOutGuard should be created" time="0.057">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthInterceptor" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="6.374" tests="1">
+    <testcase classname="AuthInterceptor should be created" name="AuthInterceptor should be created" time="0.036">
+    </testcase>
+  </testsuite>
+  <testsuite name="NewPasswordGuard" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="6.353" tests="1">
+    <testcase classname="NewPasswordGuard should be created" name="NewPasswordGuard should be created" time="0.04">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthEffects" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:47" time="1.335" tests="1">
+    <testcase classname="AuthEffects should be created" name="AuthEffects should be created" time="0.053">
+    </testcase>
+  </testsuite>
+  <testsuite name="ApiService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:47" time="2.269" tests="6">
+    <testcase classname="ApiService should be created" name="ApiService should be created" time="0.024">
+    </testcase>
+    <testcase classname="ApiService findOne should call http get" name="ApiService findOne should call http get" time="0.008">
+    </testcase>
+    <testcase classname="ApiService findAll should call http get" name="ApiService findAll should call http get" time="0.012">
+    </testcase>
+    <testcase classname="ApiService create should call http post" name="ApiService create should call http post" time="0.006">
+    </testcase>
+    <testcase classname="ApiService update should call http patch" name="ApiService update should call http patch" time="0.006">
+    </testcase>
+    <testcase classname="ApiService delete should call http delete" name="ApiService delete should call http delete" time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="AccountSettingsComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="8.976" tests="1">
+    <testcase classname="AccountSettingsComponent should create" name="AccountSettingsComponent should create" time="0.389">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignInComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="9.128" tests="3">
+    <testcase classname="SignInComponent should create" name="SignInComponent should create" time="0.396">
+    </testcase>
+    <testcase classname="SignInComponent should set loading attribute of submit-button to loading" name="SignInComponent should set loading attribute of submit-button to loading" time="0.075">
+    </testcase>
+    <testcase classname="SignInComponent onSubmit form is valid should dispatch action: &quot;[Auth] Login&quot;" name="SignInComponent onSubmit form is valid should dispatch action: &quot;[Auth] Login&quot;" time="0.076">
+    </testcase>
+  </testsuite>
+  <testsuite name="NavbarLoggedInComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="9.204" tests="4">
+    <testcase classname="NavbarLoggedInComponent should create" name="NavbarLoggedInComponent should create" time="0.341">
+    </testcase>
+    <testcase classname="NavbarLoggedInComponent should navigate to library on library button click" name="NavbarLoggedInComponent should navigate to library on library button click" time="0.077">
+    </testcase>
+    <testcase classname="NavbarLoggedInComponent sign out button should call logout on click" name="NavbarLoggedInComponent sign out button should call logout on click" time="0.055">
+    </testcase>
+    <testcase classname="NavbarLoggedInComponent logout should dispatch action: &quot;[Auth] Logout&quot;" name="NavbarLoggedInComponent logout should dispatch action: &quot;[Auth] Logout&quot;" time="0.049">
+    </testcase>
+  </testsuite>
+  <testsuite name="ResetPasswordComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="9.284" tests="3">
+    <testcase classname="ResetPasswordComponent should create" name="ResetPasswordComponent should create" time="0.397">
+    </testcase>
+    <testcase classname="ResetPasswordComponent should set loading attribute of submit-button to loading" name="ResetPasswordComponent should set loading attribute of submit-button to loading" time="0.06">
+    </testcase>
+    <testcase classname="ResetPasswordComponent onSubmit form is valid should dispatch action: &quot;[Auth] Forgot Password&quot;" name="ResetPasswordComponent onSubmit form is valid should dispatch action: &quot;[Auth] Forgot Password&quot;" time="0.069">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFilesService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:49" time="1.666" tests="1">
+    <testcase classname="LibraryFilesService should be created" name="LibraryFilesService should be created" time="0.02">
+    </testcase>
+  </testsuite>
+  <testsuite name="NavbarComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="9.297" tests="8">
+    <testcase classname="NavbarComponent should create" name="NavbarComponent should create" time="0.249">
+    </testcase>
+    <testcase classname="NavbarComponent should show logo for states only-logo and logged-out" name="NavbarComponent should show logo for states only-logo and logged-out" time="0.104">
+    </testcase>
+    <testcase classname="NavbarComponent state$ should emit on NavigationEnd event" name="NavbarComponent state$ should emit on NavigationEnd event" time="0.017">
+    </testcase>
+    <testcase classname="NavbarComponent state$ should call getNavbarState on emit" name="NavbarComponent state$ should call getNavbarState on emit" time="0.038">
+    </testcase>
+    <testcase classname="NavbarComponent getNavbarState should get navbarState from route data" name="NavbarComponent getNavbarState should get navbarState from route data" time="0.025">
+    </testcase>
+    <testcase classname="NavbarComponent should set tabIndex on logo element to 0" name="NavbarComponent should set tabIndex on logo element to 0" time="0.032">
+    </testcase>
+    <testcase classname="NavbarComponent should navigate to empty path on logo press enter" name="NavbarComponent should navigate to empty path on logo press enter" time="0.028">
+    </testcase>
+    <testcase classname="NavbarComponent should navigate to empty path on logo click" name="NavbarComponent should navigate to empty path on logo click" time="0.026">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="9.663" tests="1">
+    <testcase classname="LibraryComponent should create" name="LibraryComponent should create" time="0.746">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFoldersController" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:47" time="3.31" tests="1">
+    <testcase classname="LibraryFoldersController should be defined" name="LibraryFoldersController should be defined" time="0.059">
+    </testcase>
+  </testsuite>
+  <testsuite name="SignUpComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:41" time="9.752" tests="3">
+    <testcase classname="SignUpComponent should create" name="SignUpComponent should create" time="0.34">
+    </testcase>
+    <testcase classname="SignUpComponent should set loading attribute of submit-button to loading" name="SignUpComponent should set loading attribute of submit-button to loading" time="0.096">
+    </testcase>
+    <testcase classname="SignUpComponent onSubmit form is valid should dispatch action: &quot;[Auth] Sign Up&quot;" name="SignUpComponent onSubmit form is valid should dispatch action: &quot;[Auth] Sign Up&quot;" time="0.125">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthController" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:47" time="3.852" tests="1">
+    <testcase classname="AuthController should be defined" name="AuthController should be defined" time="0.061">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFilesService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:47" time="4.173" tests="1">
+    <testcase classname="LibraryFilesService should be defined" name="LibraryFilesService should be defined" time="0.082">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFilesController" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:47" time="4.828" tests="1">
+    <testcase classname="LibraryFilesController should be defined" name="LibraryFilesController should be defined" time="0.095">
+    </testcase>
+  </testsuite>
+  <testsuite name="StorageController" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:47" time="4.707" tests="1">
+    <testcase classname="StorageController should be defined" name="StorageController should be defined" time="0.061">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFoldersService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:50" time="1.986" tests="1">
+    <testcase classname="LibraryFoldersService should be created" name="LibraryFoldersService should be created" time="0.022">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:51" time="1.423" tests="1">
+    <testcase classname="AuthService should be defined" name="AuthService should be defined" time="0.108">
+    </testcase>
+  </testsuite>
+  <testsuite name="StorageService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:50" time="2.026" tests="1">
+    <testcase classname="StorageService should be created" name="StorageService should be created" time="0.02">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:50" time="2.017" tests="1">
+    <testcase classname="AuthService should be created" name="AuthService should be created" time="0.021">
+    </testcase>
+  </testsuite>
+  <testsuite name="EmailService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:52" time="0.814" tests="1">
+    <testcase classname="EmailService should be defined" name="EmailService should be defined" time="0.031">
+    </testcase>
+  </testsuite>
+  <testsuite name="AppController" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:52" time="0.645" tests="1">
+    <testcase classname="AppController should be defined" name="AppController should be defined" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="AudioPlayerComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:50" time="2.883" tests="1">
+    <testcase classname="AudioPlayerComponent should create" name="AudioPlayerComponent should create" time="0.274">
+    </testcase>
+  </testsuite>
+  <testsuite name="UsersService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:50" time="2.848" tests="1">
+    <testcase classname="UsersService should be defined" name="UsersService should be defined" time="0.044">
+    </testcase>
+  </testsuite>
+  <testsuite name="SettingsSidenavComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:51" time="2.387" tests="1">
+    <testcase classname="SettingsSidenavComponent should create" name="SettingsSidenavComponent should create" time="0.238">
+    </testcase>
+  </testsuite>
+  <testsuite name="StorageService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:49" time="4.265" tests="1">
+    <testcase classname="StorageService should be defined" name="StorageService should be defined" time="0.193">
+    </testcase>
+  </testsuite>
+  <testsuite name="AddFolderDialogComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:51" time="2.778" tests="1">
+    <testcase classname="AddFolderDialogComponent should create" name="AddFolderDialogComponent should create" time="0.355">
+    </testcase>
+  </testsuite>
+  <testsuite name="AppService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:53" time="0.754" tests="1">
+    <testcase classname="AppService should be defined" name="AppService should be defined" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="libraryFileReducer" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:52" time="1.89" tests="1">
+    <testcase classname="libraryFileReducer unknown action should return the default state" name="libraryFileReducer unknown action should return the default state" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFileUtilityService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:52" time="1.815" tests="1">
+    <testcase classname="LibraryFileUtilityService should be created" name="LibraryFileUtilityService should be created" time="0.026">
+    </testcase>
+  </testsuite>
+  <testsuite name="userReducer" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:52" time="2.129" tests="1">
+    <testcase classname="userReducer unknown action should return the default state" name="userReducer unknown action should return the default state" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="libraryFolderReducer" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:52" time="2.16" tests="1">
+    <testcase classname="libraryFolderReducer unknown action should return the default state" name="libraryFolderReducer unknown action should return the default state" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="SettingsComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:53" time="1.543" tests="1">
+    <testcase classname="SettingsComponent should create" name="SettingsComponent should create" time="0.201">
+    </testcase>
+  </testsuite>
+  <testsuite name="HomeComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:51" time="3.962" tests="1">
+    <testcase classname="HomeComponent should create" name="HomeComponent should create" time="0.197">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryUploadService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:53" time="1.848" tests="2">
+    <testcase classname="LibraryUploadService should be created" name="LibraryUploadService should be created" time="0.042">
+    </testcase>
+    <testcase classname="LibraryUploadService loadUserStorage should assign userStorage$" name="LibraryUploadService loadUserStorage should assign userStorage$" time="0.013">
+    </testcase>
+  </testsuite>
+  <testsuite name="AppComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:47" time="7.868" tests="1">
+    <testcase classname="AppComponent should create" name="AppComponent should create" time="0.721">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFolderSelectors" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:55" time="0.785" tests="1">
+    <testcase classname="LibraryFolderSelectors should select state" name="LibraryFolderSelectors should select state" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFileSelectors" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:53" time="2.098" tests="1">
+    <testcase classname="LibraryFileSelectors should select state" name="LibraryFileSelectors should select state" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="NotFoundComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:50" time="5.358" tests="1">
+    <testcase classname="NotFoundComponent should create" name="NotFoundComponent should create" time="0.233">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthSelectors" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:54" time="2.097" tests="1">
+    <testcase classname="AuthSelectors should select state" name="AuthSelectors should select state" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="ImprintComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:52" time="4.08" tests="1">
+    <testcase classname="ImprintComponent should create" name="ImprintComponent should create" time="0.102">
+    </testcase>
+  </testsuite>
+  <testsuite name="NavbarLoggedOutComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:54" time="1.67" tests="3">
+    <testcase classname="NavbarLoggedOutComponent should create" name="NavbarLoggedOutComponent should create" time="0.116">
+    </testcase>
+    <testcase classname="NavbarLoggedOutComponent should navigate to sign-in" name="NavbarLoggedOutComponent should navigate to sign-in" time="0.03">
+    </testcase>
+    <testcase classname="NavbarLoggedOutComponent should navigate to sign-up" name="NavbarLoggedOutComponent should navigate to sign-up" time="0.033">
+    </testcase>
+  </testsuite>
+  <testsuite name="AudioPlayerService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:55" time="1.208" tests="1">
+    <testcase classname="AudioPlayerService should be created" name="AudioPlayerService should be created" time="0.03">
+    </testcase>
+  </testsuite>
+  <testsuite name="TermsOfServiceComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:52" time="3.654" tests="1">
+    <testcase classname="TermsOfServiceComponent should create" name="TermsOfServiceComponent should create" time="0.101">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFoldersService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:55" time="0.918" tests="1">
+    <testcase classname="LibraryFoldersService should be defined" name="LibraryFoldersService should be defined" time="0.04">
+    </testcase>
+  </testsuite>
+  <testsuite name="UserSelectors" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:54" time="2.017" tests="1">
+    <testcase classname="UserSelectors should select state" name="UserSelectors should select state" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="PrivacyPolicyComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:53" time="3.744" tests="1">
+    <testcase classname="PrivacyPolicyComponent should create" name="PrivacyPolicyComponent should create" time="0.133">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFilesService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:56" time="0.893" tests="1">
+    <testcase classname="LibraryFilesService should be created" name="LibraryFilesService should be created" time="0.023">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthReducer" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:55" time="2.049" tests="1">
+    <testcase classname="AuthReducer unknown action should return the default state" name="AuthReducer unknown action should return the default state" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="UsersController" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:54" time="3.331" tests="1">
+    <testcase classname="UsersController should be defined" name="UsersController should be defined" time="0.056">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:56" time="1.784" tests="1">
+    <testcase classname="AuthService should be created" name="AuthService should be created" time="0.022">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFoldersService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:56" time="1.946" tests="1">
+    <testcase classname="LibraryFoldersService should be created" name="LibraryFoldersService should be created" time="0.05">
+    </testcase>
+  </testsuite>
+  <testsuite name="StorageService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:56" time="2.019" tests="1">
+    <testcase classname="StorageService should be created" name="StorageService should be created" time="0.024">
+    </testcase>
+  </testsuite>
+  <testsuite name="ApiService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:55" time="2.476" tests="1">
+    <testcase classname="ApiService should be created" name="ApiService should be created" time="0.061">
+    </testcase>
+  </testsuite>
+  <testsuite name="PrismaService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:55" time="2.742" tests="1">
+    <testcase classname="PrismaService should be defined" name="PrismaService should be defined" time="0.24">
+    </testcase>
+  </testsuite>
+  <testsuite name="NewFileUploadsComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:56" time="2.449" tests="10">
+    <testcase classname="NewFileUploadsComponent should create" name="NewFileUploadsComponent should create" time="0.124">
+    </testcase>
+    <testcase classname="NewFileUploadsComponent hasUploadErrors should return true if any upload error is truthy" name="NewFileUploadsComponent hasUploadErrors should return true if any upload error is truthy" time="0.024">
+    </testcase>
+    <testcase classname="NewFileUploadsComponent onSelectFiles should check files for upload errors" name="NewFileUploadsComponent onSelectFiles should check files for upload errors" time="0.045">
+    </testcase>
+    <testcase classname="NewFileUploadsComponent onSelectFiles should upload files if files produce no upload errors" name="NewFileUploadsComponent onSelectFiles should upload files if files produce no upload errors" time="0.029">
+    </testcase>
+    <testcase classname="NewFileUploadsComponent checkForUploadErrors should check files for that exceed the maximum upload size" name="NewFileUploadsComponent checkForUploadErrors should check files for that exceed the maximum upload size" time="0.029">
+    </testcase>
+    <testcase classname="NewFileUploadsComponent checkForUploadErrors should check files with a wrong file format" name="NewFileUploadsComponent checkForUploadErrors should check files with a wrong file format" time="0.049">
+    </testcase>
+    <testcase classname="NewFileUploadsComponent checkForUploadErrors should check whether sum of all file sizes exceeds storage user has left" name="NewFileUploadsComponent checkForUploadErrors should check whether sum of all file sizes exceeds storage user has left" time="0.042">
+    </testcase>
+    <testcase classname="NewFileUploadsComponent checkForFilesExceedingMaxSize should return files with size that exceed the maximum upload size" name="NewFileUploadsComponent checkForFilesExceedingMaxSize should return files with size that exceed the maximum upload size" time="0.028">
+    </testcase>
+    <testcase classname="NewFileUploadsComponent checkForFilesWithWrongFormat should return files with wrong file type" name="NewFileUploadsComponent checkForFilesWithWrongFormat should return files with wrong file type" time="0.045">
+    </testcase>
+    <testcase classname="NewFileUploadsComponent checkForNoStorageLeft should return whether sum of files sizes exceed remaining user storage" name="NewFileUploadsComponent checkForNoStorageLeft should return whether sum of files sizes exceed remaining user storage" time="0.047">
+    </testcase>
+  </testsuite>
+  <testsuite name="NewPasswordComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:56" time="3.972" tests="3">
+    <testcase classname="NewPasswordComponent should create" name="NewPasswordComponent should create" time="0.321">
+    </testcase>
+    <testcase classname="NewPasswordComponent should set loading attribute of submit-button to loading" name="NewPasswordComponent should set loading attribute of submit-button to loading" time="0.129">
+    </testcase>
+    <testcase classname="NewPasswordComponent onSubmit form is valid should dispatch action: &quot;[Auth] Reset Password&quot;" name="NewPasswordComponent onSubmit form is valid should dispatch action: &quot;[Auth] Reset Password&quot;" time="0.078">
+    </testcase>
+  </testsuite>
+  <testsuite name="ButtonComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:56" time="4.153" tests="16">
+    <testcase classname="ButtonComponent should create" name="ButtonComponent should create" time="0.167">
+    </testcase>
+    <testcase classname="ButtonComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" name="ButtonComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" time="0.029">
+    </testcase>
+    <testcase classname="ButtonComponent should set disabled" name="ButtonComponent should set disabled" time="0.038">
+    </testcase>
+    <testcase classname="ButtonComponent loading should add css class simpler-button-loading to button element" name="ButtonComponent loading should add css class simpler-button-loading to button element" time="0.053">
+    </testcase>
+    <testcase classname="ButtonComponent loading should hide text" name="ButtonComponent loading should hide text" time="0.093">
+    </testcase>
+    <testcase classname="ButtonComponent loading should hide icon" name="ButtonComponent loading should hide icon" time="0.051">
+    </testcase>
+    <testcase classname="ButtonComponent loading should show spinner" name="ButtonComponent loading should show spinner" time="0.029">
+    </testcase>
+    <testcase classname="ButtonComponent should set type to button by default" name="ButtonComponent should set type to button by default" time="0.025">
+    </testcase>
+    <testcase classname="ButtonComponent should forward type to button element" name="ButtonComponent should forward type to button element" time="0.025">
+    </testcase>
+    <testcase classname="ButtonComponent icon should forward icon to name of icon" name="ButtonComponent icon should forward icon to name of icon" time="0.018">
+    </testcase>
+    <testcase classname="ButtonComponent icon should add css class simpler-button-icon" name="ButtonComponent icon should add css class simpler-button-icon" time="0.015">
+    </testcase>
+    <testcase classname="ButtonComponent icon should add css class for icon position" name="ButtonComponent icon should add css class for icon position" time="0.025">
+    </testcase>
+    <testcase classname="ButtonComponent button style should set color to primary by default" name="ButtonComponent button style should set color to primary by default" time="0.022">
+    </testcase>
+    <testcase classname="ButtonComponent button style should add a css class for each color type" name="ButtonComponent button style should add a css class for each color type" time="0.018">
+    </testcase>
+    <testcase classname="ButtonComponent button style should set appearance to solid by default" name="ButtonComponent button style should set appearance to solid by default" time="0.017">
+    </testcase>
+    <testcase classname="ButtonComponent button style should add a css class for each appearance type" name="ButtonComponent button style should add a css class for each appearance type" time="0.017">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFilesComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:58" time="2.391" tests="1">
+    <testcase classname="LibraryFilesComponent should create" name="LibraryFilesComponent should create" time="0.181">
+    </testcase>
+  </testsuite>
+  <testsuite name="NavButtonComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:56" time="4.321" tests="12">
+    <testcase classname="NavButtonComponent should create" name="NavButtonComponent should create" time="0.13">
+    </testcase>
+    <testcase classname="NavButtonComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" name="NavButtonComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" time="0.025">
+    </testcase>
+    <testcase classname="NavButtonComponent should set disabled" name="NavButtonComponent should set disabled" time="0.036">
+    </testcase>
+    <testcase classname="NavButtonComponent loading should add css class" name="NavButtonComponent loading should add css class" time="0.031">
+    </testcase>
+    <testcase classname="NavButtonComponent loading should hide text" name="NavButtonComponent loading should hide text" time="0.042">
+    </testcase>
+    <testcase classname="NavButtonComponent loading should hide icon" name="NavButtonComponent loading should hide icon" time="0.026">
+    </testcase>
+    <testcase classname="NavButtonComponent loading should hide caret" name="NavButtonComponent loading should hide caret" time="0.035">
+    </testcase>
+    <testcase classname="NavButtonComponent loading should show spinner" name="NavButtonComponent loading should show spinner" time="0.022">
+    </testcase>
+    <testcase classname="NavButtonComponent should set type to button" name="NavButtonComponent should set type to button" time="0.021">
+    </testcase>
+    <testcase classname="NavButtonComponent icon should forward icon to name of icon" name="NavButtonComponent icon should forward icon to name of icon" time="0.024">
+    </testcase>
+    <testcase classname="NavButtonComponent icon should add css class" name="NavButtonComponent icon should add css class" time="0.017">
+    </testcase>
+    <testcase classname="NavButtonComponent should set caret" name="NavButtonComponent should set caret" time="0.023">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibrarySidenavComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:58" time="2.934" tests="5">
+    <testcase classname="LibrarySidenavComponent should create" name="LibrarySidenavComponent should create" time="0.283">
+    </testcase>
+    <testcase classname="LibrarySidenavComponent should initialize maxUserStorage" name="LibrarySidenavComponent should initialize maxUserStorage" time="0.052">
+    </testcase>
+    <testcase classname="LibrarySidenavComponent should initialize userStorage$" name="LibrarySidenavComponent should initialize userStorage$" time="0.049">
+    </testcase>
+    <testcase classname="LibrarySidenavComponent should initialize storageProgress$" name="LibrarySidenavComponent should initialize storageProgress$" time="0.036">
+    </testcase>
+    <testcase classname="LibrarySidenavComponent should initialize uploadProgress$" name="LibrarySidenavComponent should initialize uploadProgress$" time="0.038">
+    </testcase>
+  </testsuite>
+  <testsuite name="FileUploadModalComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:59" time="2.283" tests="1">
+    <testcase classname="FileUploadModalComponent should create" name="FileUploadModalComponent should create" time="0.195">
+    </testcase>
+  </testsuite>
+  <testsuite name="UploadItemComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:58" time="2.97" tests="1">
+    <testcase classname="UploadItemComponent should create" name="UploadItemComponent should create" time="0.475">
+    </testcase>
+  </testsuite>
+  <testsuite name="AlertComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:56" time="4.874" tests="10">
+    <testcase classname="AlertComponent should create" name="AlertComponent should create" time="0.122">
+    </testcase>
+    <testcase classname="AlertComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" name="AlertComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" time="0.035">
+    </testcase>
+    <testcase classname="AlertComponent should set dismissed to false by default" name="AlertComponent should set dismissed to false by default" time="0.028">
+    </testcase>
+    <testcase classname="AlertComponent should hide container element if dismissed" name="AlertComponent should hide container element if dismissed" time="0.056">
+    </testcase>
+    <testcase classname="AlertComponent should forward content to message element" name="AlertComponent should forward content to message element" time="0.035">
+    </testcase>
+    <testcase classname="AlertComponent should set color to primary by default" name="AlertComponent should set color to primary by default" time="0.024">
+    </testcase>
+    <testcase classname="AlertComponent should add a css class for each color type" name="AlertComponent should add a css class for each color type" time="0.02">
+    </testcase>
+    <testcase classname="AlertComponent dismiss button should set dismissable" name="AlertComponent dismiss button should set dismissable" time="0.034">
+    </testcase>
+    <testcase classname="AlertComponent dismiss button should call dismiss on dismiss button click" name="AlertComponent dismiss button should call dismiss on dismiss button click" time="0.04">
+    </testcase>
+    <testcase classname="AlertComponent dismiss should set dismissed to true" name="AlertComponent dismiss should set dismissed to true" time="0.02">
+    </testcase>
+  </testsuite>
+  <testsuite name="IconButtonComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:57" time="4.392" tests="17">
+    <testcase classname="IconButtonComponent should create" name="IconButtonComponent should create" time="0.119">
+    </testcase>
+    <testcase classname="IconButtonComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" name="IconButtonComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" time="0.033">
+    </testcase>
+    <testcase classname="IconButtonComponent should add and remove the disabled state" name="IconButtonComponent should add and remove the disabled state" time="0.037">
+    </testcase>
+    <testcase classname="IconButtonComponent should add a css class simpler-icon-button-loading" name="IconButtonComponent should add a css class simpler-icon-button-loading" time="0.045">
+    </testcase>
+    <testcase classname="IconButtonComponent should add spinner when loading" name="IconButtonComponent should add spinner when loading" time="0.019">
+    </testcase>
+    <testcase classname="IconButtonComponent should hide icon when loading" name="IconButtonComponent should hide icon when loading" time="0.025">
+    </testcase>
+    <testcase classname="IconButtonComponent should set type to button by default" name="IconButtonComponent should set type to button by default" time="0.016">
+    </testcase>
+    <testcase classname="IconButtonComponent should forward type to button element" name="IconButtonComponent should forward type to button element" time="0.018">
+    </testcase>
+    <testcase classname="IconButtonComponent should forward icon to name of icon" name="IconButtonComponent should forward icon to name of icon" time="0.024">
+    </testcase>
+    <testcase classname="IconButtonComponent should forward size `large` as `medium` to size of icon" name="IconButtonComponent should forward size `large` as `medium` to size of icon" time="0.019">
+    </testcase>
+    <testcase classname="IconButtonComponent should forward size `small` as `small` to size of icon" name="IconButtonComponent should forward size `small` as `small` to size of icon" time="0.019">
+    </testcase>
+    <testcase classname="IconButtonComponent button style should set color to primary by default" name="IconButtonComponent button style should set color to primary by default" time="0.011">
+    </testcase>
+    <testcase classname="IconButtonComponent button style should add a css class for each color type" name="IconButtonComponent button style should add a css class for each color type" time="0.019">
+    </testcase>
+    <testcase classname="IconButtonComponent button style should set appearance to solid by default" name="IconButtonComponent button style should set appearance to solid by default" time="0.012">
+    </testcase>
+    <testcase classname="IconButtonComponent button style should add a css class for each appearance type" name="IconButtonComponent button style should add a css class for each appearance type" time="0.017">
+    </testcase>
+    <testcase classname="IconButtonComponent button style should set size to large by default" name="IconButtonComponent button style should set size to large by default" time="0.012">
+    </testcase>
+    <testcase classname="IconButtonComponent button style should add a css class for each size type" name="IconButtonComponent button style should add a css class for each size type" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="CheckboxComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:56" time="5.06" tests="17">
+    <testcase classname="CheckboxComponent should create" name="CheckboxComponent should create" time="0.151">
+    </testcase>
+    <testcase classname="CheckboxComponent should add and remove the checked state" name="CheckboxComponent should add and remove the checked state" time="0.044">
+    </testcase>
+    <testcase classname="CheckboxComponent should add and remove the disabled state" name="CheckboxComponent should add and remove the disabled state" time="0.043">
+    </testcase>
+    <testcase classname="CheckboxComponent should forward name to id of input element" name="CheckboxComponent should forward name to id of input element" time="0.034">
+    </testcase>
+    <testcase classname="CheckboxComponent should forward name to input element" name="CheckboxComponent should forward name to input element" time="0.021">
+    </testcase>
+    <testcase classname="CheckboxComponent should forward label to the label element content" name="CheckboxComponent should forward label to the label element content" time="0.021">
+    </testcase>
+    <testcase classname="CheckboxComponent should forward the required attribute to input element" name="CheckboxComponent should forward the required attribute to input element" time="0.023">
+    </testcase>
+    <testcase classname="CheckboxComponent should forward the value to input element" name="CheckboxComponent should forward the value to input element" time="0.016">
+    </testcase>
+    <testcase classname="CheckboxComponent should add a css class simpler-checkbox-label-left" name="CheckboxComponent should add a css class simpler-checkbox-label-left" time="0.045">
+    </testcase>
+    <testcase classname="CheckboxComponent should add a css class simpler-checkbox-label-right" name="CheckboxComponent should add a css class simpler-checkbox-label-right" time="0.027">
+    </testcase>
+    <testcase classname="CheckboxComponent should hide the label element when label is not defined" name="CheckboxComponent should hide the label element when label is not defined" time="0.018">
+    </testcase>
+    <testcase classname="CheckboxComponent should toggle checked state on click" name="CheckboxComponent should toggle checked state on click" time="0.021">
+    </testcase>
+    <testcase classname="CheckboxComponent should not toggle `checked` state upon interation while disabled" name="CheckboxComponent should not toggle `checked` state upon interation while disabled" time="0.028">
+    </testcase>
+    <testcase classname="CheckboxComponent should not trigger the click event multiple times" name="CheckboxComponent should not trigger the click event multiple times" time="0.025">
+    </testcase>
+    <testcase classname="CheckboxComponent should trigger a change event when the native input does" name="CheckboxComponent should trigger a change event when the native input does" time="0.018">
+    </testcase>
+    <testcase classname="CheckboxComponent should trigger an input event when the native input triggers change " name="CheckboxComponent should trigger an input event when the native input triggers change " time="0.024">
+    </testcase>
+    <testcase classname="CheckboxComponent should not trigger the change event by changing the native value" name="CheckboxComponent should not trigger the change event by changing the native value" time="0.031">
+    </testcase>
+  </testsuite>
+  <testsuite name="AvatarComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:58" time="3.995" tests="8">
+    <testcase classname="AvatarComponent should create" name="AvatarComponent should create" time="0.105">
+    </testcase>
+    <testcase classname="AvatarComponent should set size to medium by default" name="AvatarComponent should set size to medium by default" time="0.027">
+    </testcase>
+    <testcase classname="AvatarComponent should add a css class for each size type" name="AvatarComponent should add a css class for each size type" time="0.016">
+    </testcase>
+    <testcase classname="AvatarComponent should set height and width using size specs" name="AvatarComponent should set height and width using size specs" time="0.023">
+    </testcase>
+    <testcase classname="AvatarComponent should forward src to img element" name="AvatarComponent should forward src to img element" time="0.018">
+    </testcase>
+    <testcase classname="AvatarComponent should forward srcset to img element" name="AvatarComponent should forward srcset to img element" time="0.018">
+    </testcase>
+    <testcase classname="AvatarComponent should forward sizes to img element" name="AvatarComponent should forward sizes to img element" time="0.025">
+    </testcase>
+    <testcase classname="AvatarComponent should forward alt to img element" name="AvatarComponent should forward alt to img element" time="0.02">
+    </testcase>
+  </testsuite>
+  <testsuite name="InputComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:56" time="5.812" tests="33">
+    <testcase classname="InputComponent should create" name="InputComponent should create" time="0.211">
+    </testcase>
+    <testcase classname="InputComponent should set label" name="InputComponent should set label" time="0.049">
+    </testcase>
+    <testcase classname="InputComponent should forward placeholder to input element" name="InputComponent should forward placeholder to input element" time="0.038">
+    </testcase>
+    <testcase classname="InputComponent should forward name to input element" name="InputComponent should forward name to input element" time="0.03">
+    </testcase>
+    <testcase classname="InputComponent should forward name to id of input element" name="InputComponent should forward name to id of input element" time="0.032">
+    </testcase>
+    <testcase classname="InputComponent should forward type to input element" name="InputComponent should forward type to input element" time="0.023">
+    </testcase>
+    <testcase classname="InputComponent should forward autocomplete to input element" name="InputComponent should forward autocomplete to input element" time="0.021">
+    </testcase>
+    <testcase classname="InputComponent should forward required to input element" name="InputComponent should forward required to input element" time="0.038">
+    </testcase>
+    <testcase classname="InputComponent should forward readonly to input element" name="InputComponent should forward readonly to input element" time="0.036">
+    </testcase>
+    <testcase classname="InputComponent should set errors" name="InputComponent should set errors" time="0.028">
+    </testcase>
+    <testcase classname="InputComponent should set disabled" name="InputComponent should set disabled" time="0.03">
+    </testcase>
+    <testcase classname="InputComponent should add a css class when focused" name="InputComponent should add a css class when focused" time="0.026">
+    </testcase>
+    <testcase classname="InputComponent should call onBlur on input element blur" name="InputComponent should call onBlur on input element blur" time="0.032">
+    </testcase>
+    <testcase classname="InputComponent should call onTouched on input element blur" name="InputComponent should call onTouched on input element blur" time="0.026">
+    </testcase>
+    <testcase classname="InputComponent should call onFocus on input element focus" name="InputComponent should call onFocus on input element focus" time="0.035">
+    </testcase>
+    <testcase classname="InputComponent should call onChange on input element change with value" name="InputComponent should call onChange on input element change with value" time="0.02">
+    </testcase>
+    <testcase classname="InputComponent should call emitChange on input element change" name="InputComponent should call emitChange on input element change" time="0.021">
+    </testcase>
+    <testcase classname="InputComponent should call onChange on input element input (event) with value" name="InputComponent should call onChange on input element input (event) with value" time="0.022">
+    </testcase>
+    <testcase classname="InputComponent should call emitChange on input element input (event)" name="InputComponent should call emitChange on input element input (event)" time="0.021">
+    </testcase>
+    <testcase classname="InputComponent should call onPressEnter on input element enter key press" name="InputComponent should call onPressEnter on input element enter key press" time="0.042">
+    </testcase>
+    <testcase classname="InputComponent emitChange should emit an InputChange event" name="InputComponent emitChange should emit an InputChange event" time="0.024">
+    </testcase>
+    <testcase classname="InputComponent emitChange should call syncInputValue" name="InputComponent emitChange should call syncInputValue" time="0.033">
+    </testcase>
+    <testcase classname="InputComponent emitBlur should emit an InputBlur event" name="InputComponent emitBlur should emit an InputBlur event" time="0.031">
+    </testcase>
+    <testcase classname="InputComponent emitBlur should call syncInputValue" name="InputComponent emitBlur should call syncInputValue" time="0.025">
+    </testcase>
+    <testcase classname="InputComponent emitFocus should emit an InputFocus event" name="InputComponent emitFocus should emit an InputFocus event" time="0.035">
+    </testcase>
+    <testcase classname="InputComponent emitFocus should call syncInputValue" name="InputComponent emitFocus should call syncInputValue" time="0.024">
+    </testcase>
+    <testcase classname="InputComponent emitEnter should emit an InputEnter event" name="InputComponent emitEnter should emit an InputEnter event" time="0.021">
+    </testcase>
+    <testcase classname="InputComponent emitEnter should call syncInputValue" name="InputComponent emitEnter should call syncInputValue" time="0.028">
+    </testcase>
+    <testcase classname="InputComponent should trigger a change event when the native input does" name="InputComponent should trigger a change event when the native input does" time="0.028">
+    </testcase>
+    <testcase classname="InputComponent should trigger an input event when the native input triggers change event" name="InputComponent should trigger an input event when the native input triggers change event" time="0.027">
+    </testcase>
+    <testcase classname="InputComponent should trigger a focus event when the native input does" name="InputComponent should trigger a focus event when the native input does" time="0.027">
+    </testcase>
+    <testcase classname="InputComponent should trigger a blur event when the native input does" name="InputComponent should trigger a blur event when the native input does" time="0.026">
+    </testcase>
+    <testcase classname="InputComponent should trigger a enter event when the native input triggers keydown.enter" name="InputComponent should trigger a enter event when the native input triggers keydown.enter" time="0.027">
+    </testcase>
+  </testsuite>
+  <testsuite name="ToggleComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:57" time="5.038" tests="17">
+    <testcase classname="ToggleComponent should create" name="ToggleComponent should create" time="0.157">
+    </testcase>
+    <testcase classname="ToggleComponent should add and remove the checked state" name="ToggleComponent should add and remove the checked state" time="0.033">
+    </testcase>
+    <testcase classname="ToggleComponent should add and remove the disabled state" name="ToggleComponent should add and remove the disabled state" time="0.031">
+    </testcase>
+    <testcase classname="ToggleComponent should forward name to id of input element" name="ToggleComponent should forward name to id of input element" time="0.027">
+    </testcase>
+    <testcase classname="ToggleComponent should forward name to input element" name="ToggleComponent should forward name to input element" time="0.031">
+    </testcase>
+    <testcase classname="ToggleComponent should forward label to the label element content" name="ToggleComponent should forward label to the label element content" time="0.032">
+    </testcase>
+    <testcase classname="ToggleComponent should forward the required attribute to input element" name="ToggleComponent should forward the required attribute to input element" time="0.019">
+    </testcase>
+    <testcase classname="ToggleComponent should forward the value to input element" name="ToggleComponent should forward the value to input element" time="0.019">
+    </testcase>
+    <testcase classname="ToggleComponent should add a css class simpler-toggle-label-left" name="ToggleComponent should add a css class simpler-toggle-label-left" time="0.024">
+    </testcase>
+    <testcase classname="ToggleComponent should add a css class simpler-toggle-label-right" name="ToggleComponent should add a css class simpler-toggle-label-right" time="0.021">
+    </testcase>
+    <testcase classname="ToggleComponent should hide the label element when label is not defined" name="ToggleComponent should hide the label element when label is not defined" time="0.016">
+    </testcase>
+    <testcase classname="ToggleComponent should toggle checked state on click" name="ToggleComponent should toggle checked state on click" time="0.029">
+    </testcase>
+    <testcase classname="ToggleComponent should not toggle `checked` state upon interation while disabled" name="ToggleComponent should not toggle `checked` state upon interation while disabled" time="0.02">
+    </testcase>
+    <testcase classname="ToggleComponent should not trigger the click event multiple times" name="ToggleComponent should not trigger the click event multiple times" time="0.023">
+    </testcase>
+    <testcase classname="ToggleComponent should trigger a change event when the native input does" name="ToggleComponent should trigger a change event when the native input does" time="0.022">
+    </testcase>
+    <testcase classname="ToggleComponent should trigger an input event when the native input triggers change " name="ToggleComponent should trigger an input event when the native input triggers change " time="0.024">
+    </testcase>
+    <testcase classname="ToggleComponent should not trigger the change event by changing the native value" name="ToggleComponent should not trigger the change event by changing the native value" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="TabGroupComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:57" time="4.391" tests="20">
+    <testcase classname="TabGroupComponent should create" name="TabGroupComponent should create" time="0.126">
+    </testcase>
+    <testcase classname="TabGroupComponent tab button should have same number of buttons as number of tabs" name="TabGroupComponent tab button should have same number of buttons as number of tabs" time="0.03">
+    </testcase>
+    <testcase classname="TabGroupComponent tab button should contain tab label" name="TabGroupComponent tab button should contain tab label" time="0.034">
+    </testcase>
+    <testcase classname="TabGroupComponent tab button should call selectTab on click" name="TabGroupComponent tab button should call selectTab on click" time="0.046">
+    </testcase>
+    <testcase classname="TabGroupComponent tab button should add a css class simpler-tab-button-selected" name="TabGroupComponent tab button should add a css class simpler-tab-button-selected" time="0.024">
+    </testcase>
+    <testcase classname="TabGroupComponent selected indicator should be hidden when no tab is selected" name="TabGroupComponent selected indicator should be hidden when no tab is selected" time="0.022">
+    </testcase>
+    <testcase classname="TabGroupComponent ngAfterViewInit should call initExclusiveTabSelect" name="TabGroupComponent ngAfterViewInit should call initExclusiveTabSelect" time="0.024">
+    </testcase>
+    <testcase classname="TabGroupComponent ngAfterContentInit should call initSelectedTab" name="TabGroupComponent ngAfterContentInit should call initSelectedTab" time="0.02">
+    </testcase>
+    <testcase classname="TabGroupComponent ngOnChanges should call selectTab with current value if value has changed" name="TabGroupComponent ngOnChanges should call selectTab with current value if value has changed" time="0.033">
+    </testcase>
+    <testcase classname="TabGroupComponent selectTab shoud call selectTab (TabComponent) with passed value" name="TabGroupComponent selectTab shoud call selectTab (TabComponent) with passed value" time="0.02">
+    </testcase>
+    <testcase classname="TabGroupComponent indexOfTab should return index of tab with passed value" name="TabGroupComponent indexOfTab should return index of tab with passed value" time="0.036">
+    </testcase>
+    <testcase classname="TabGroupComponent findTab should return tab with passed value" name="TabGroupComponent findTab should return tab with passed value" time="0.021">
+    </testcase>
+    <testcase classname="TabGroupComponent initSelectedTab should set selectedTab" name="TabGroupComponent initSelectedTab should set selectedTab" time="0.024">
+    </testcase>
+    <testcase classname="TabGroupComponent initSelectedTab should set selectedTabIndex" name="TabGroupComponent initSelectedTab should set selectedTabIndex" time="0.021">
+    </testcase>
+    <testcase classname="TabGroupComponent initExclusiveTabSelect should set value when tab is selected" name="TabGroupComponent initExclusiveTabSelect should set value when tab is selected" time="0.017">
+    </testcase>
+    <testcase classname="TabGroupComponent initExclusiveTabSelect should set selectedTab when tab is selected" name="TabGroupComponent initExclusiveTabSelect should set selectedTab when tab is selected" time="0.025">
+    </testcase>
+    <testcase classname="TabGroupComponent initExclusiveTabSelect should set selectedTabIndex when tab is selected" name="TabGroupComponent initExclusiveTabSelect should set selectedTabIndex when tab is selected" time="0.021">
+    </testcase>
+    <testcase classname="TabGroupComponent initExclusiveTabSelect should emit select event when tab is selected" name="TabGroupComponent initExclusiveTabSelect should emit select event when tab is selected" time="0.016">
+    </testcase>
+    <testcase classname="TabGroupComponent initExclusiveTabSelect should call unselectOtherTabs when tab is selected" name="TabGroupComponent initExclusiveTabSelect should call unselectOtherTabs when tab is selected" time="0.016">
+    </testcase>
+    <testcase classname="TabGroupComponent unselectOtherTabs should unselect each tab not having the passed value" name="TabGroupComponent unselectOtherTabs should unselect each tab not having the passed value" time="0.023">
+    </testcase>
+  </testsuite>
+  <testsuite name="SliderComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:08:58" time="4.396" tests="9">
+    <testcase classname="SliderComponent should create" name="SliderComponent should create" time="0.131">
+    </testcase>
+    <testcase classname="SliderComponent should add and remove the disabled state" name="SliderComponent should add and remove the disabled state" time="0.045">
+    </testcase>
+    <testcase classname="SliderComponent should forward name to id of input element" name="SliderComponent should forward name to id of input element" time="0.036">
+    </testcase>
+    <testcase classname="SliderComponent should forward name to input element" name="SliderComponent should forward name to input element" time="0.034">
+    </testcase>
+    <testcase classname="SliderComponent emitChange should emit change" name="SliderComponent emitChange should emit change" time="0.031">
+    </testcase>
+    <testcase classname="SliderComponent emitChange should call syncInputValue" name="SliderComponent emitChange should call syncInputValue" time="0.04">
+    </testcase>
+    <testcase classname="SliderComponent emitInput should emit input" name="SliderComponent emitInput should emit input" time="0.021">
+    </testcase>
+    <testcase classname="SliderComponent emitInput should call syncInputValue" name="SliderComponent emitInput should call syncInputValue" time="0.025">
+    </testcase>
+    <testcase classname="SliderComponent writeValue should assign this.value to passed value" name="SliderComponent writeValue should assign this.value to passed value" time="0.029">
+    </testcase>
+  </testsuite>
+  <testsuite name="AudioPlayerCenterControlsComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:00" time="2.208" tests="1">
+    <testcase classname="AudioPlayerCenterControlsComponent should create" name="AudioPlayerCenterControlsComponent should create" time="0.242">
+    </testcase>
+  </testsuite>
+  <testsuite name="FileSidebarComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:01" time="1.607" tests="1">
+    <testcase classname="FileSidebarComponent should create" name="FileSidebarComponent should create" time="0.106">
+    </testcase>
+  </testsuite>
+  <testsuite name="ResetPasswordConfirmPromptComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:01" time="2.066" tests="3">
+    <testcase classname="ResetPasswordConfirmPromptComponent should create" name="ResetPasswordConfirmPromptComponent should create" time="0.242">
+    </testcase>
+    <testcase classname="ResetPasswordConfirmPromptComponent resendResetPasswordEmail form is valid should set loading to true on call" name="ResetPasswordConfirmPromptComponent resendResetPasswordEmail form is valid should set loading to true on call" time="0.06">
+    </testcase>
+    <testcase classname="ResetPasswordConfirmPromptComponent resendResetPasswordEmail form is valid should set loading to false on resolve" name="ResetPasswordConfirmPromptComponent resendResetPasswordEmail form is valid should set loading to false on resolve" time="0.024">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryHomeComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:00" time="3.037" tests="1">
+    <testcase classname="LibraryHomeComponent should create" name="LibraryHomeComponent should create" time="0.745">
+    </testcase>
+  </testsuite>
+  <testsuite name="CardComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:02" time="1.757" tests="6">
+    <testcase classname="CardComponent should create" name="CardComponent should create" time="0.127">
+    </testcase>
+    <testcase classname="CardComponent should forward title to corresponding element" name="CardComponent should forward title to corresponding element" time="0.037">
+    </testcase>
+    <testcase classname="CardComponent should forward subtitle to corresponding element" name="CardComponent should forward subtitle to corresponding element" time="0.025">
+    </testcase>
+    <testcase classname="CardComponent should forward body to corresponding element" name="CardComponent should forward body to corresponding element" time="0.026">
+    </testcase>
+    <testcase classname="CardComponent icon should add css class" name="CardComponent icon should add css class" time="0.022">
+    </testcase>
+    <testcase classname="CardComponent icon should should forward icon" name="CardComponent icon should should forward icon" time="0.023">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryRecentComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:01" time="2.77" tests="1">
+    <testcase classname="LibraryRecentComponent should create" name="LibraryRecentComponent should create" time="0.661">
+    </testcase>
+  </testsuite>
+  <testsuite name="BreadCrumbComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:00" time="3.32" tests="2">
+    <testcase classname="BreadCrumbComponent should create" name="BreadCrumbComponent should create" time="0.096">
+    </testcase>
+    <testcase classname="BreadCrumbComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" name="BreadCrumbComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" time="0.047">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryHomeFilesListComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:01" time="2.832" tests="1">
+    <testcase classname="LibraryHomeFilesListComponent should create" name="LibraryHomeFilesListComponent should create" time="0.549">
+    </testcase>
+  </testsuite>
+  <testsuite name="ResetPasswordConfirmDialogComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:01" time="2.979" tests="1">
+    <testcase classname="ResetPasswordConfirmDialogComponent should create" name="ResetPasswordConfirmDialogComponent should create" time="0.233">
+    </testcase>
+  </testsuite>
+  <testsuite name="EmailConfirmSuccessComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:02" time="1.878" tests="1">
+    <testcase classname="EmailConfirmSuccessComponent should create" name="EmailConfirmSuccessComponent should create" time="0.234">
+    </testcase>
+  </testsuite>
+  <testsuite name="IconComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:03" time="1.458" tests="5">
+    <testcase classname="IconComponent should create" name="IconComponent should create" time="0.083">
+    </testcase>
+    <testcase classname="IconComponent should foward name to icon" name="IconComponent should foward name to icon" time="0.045">
+    </testcase>
+    <testcase classname="IconComponent should set height and width using size specs" name="IconComponent should set height and width using size specs" time="0.026">
+    </testcase>
+    <testcase classname="IconComponent should add css class when with background" name="IconComponent should add css class when with background" time="0.012">
+    </testcase>
+    <testcase classname="IconComponent should add a css class for each size type" name="IconComponent should add a css class for each size type" time="0.018">
+    </testcase>
+  </testsuite>
+  <testsuite name="CompletedUploadItemComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:02" time="2.247" tests="1">
+    <testcase classname="CompletedUploadItemComponent should create" name="CompletedUploadItemComponent should create" time="0.486">
+    </testcase>
+  </testsuite>
+  <testsuite name="EmailConfirmPromptComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:02" time="2.433" tests="1">
+    <testcase classname="EmailConfirmPromptComponent should create" name="EmailConfirmPromptComponent should create" time="0.249">
+    </testcase>
+  </testsuite>
+  <testsuite name="NewPasswordSuccessComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:01" time="2.94" tests="1">
+    <testcase classname="NewPasswordSuccessComponent should create" name="NewPasswordSuccessComponent should create" time="0.249">
+    </testcase>
+  </testsuite>
+  <testsuite name="FileCardComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:02" time="2.525" tests="1">
+    <testcase classname="FileCardComponent should create" name="FileCardComponent should create" time="0.528">
+    </testcase>
+  </testsuite>
+  <testsuite name="FileItemComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:02" time="2.732" tests="1">
+    <testcase classname="FileItemComponent should create" name="FileItemComponent should create" time="0.231">
+    </testcase>
+  </testsuite>
+  <testsuite name="FileCoverComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:03" time="1.98" tests="1">
+    <testcase classname="FileCoverComponent should create" name="FileCoverComponent should create" time="0.181">
+    </testcase>
+  </testsuite>
+  <testsuite name="SpinnerComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:02" time="2.894" tests="3">
+    <testcase classname="SpinnerComponent should create" name="SpinnerComponent should create" time="0.082">
+    </testcase>
+    <testcase classname="SpinnerComponent should add a css class for each color type including variants" name="SpinnerComponent should add a css class for each color type including variants" time="0.019">
+    </testcase>
+    <testcase classname="SpinnerComponent should add a css class for each size type" name="SpinnerComponent should add a css class for each size type" time="0.013">
+    </testcase>
+  </testsuite>
+  <testsuite name="ResetEmailConfirmDialogComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:01" time="4.602" tests="1">
+    <testcase classname="ResetEmailConfirmDialogComponent should create" name="ResetEmailConfirmDialogComponent should create" time="0.264">
+    </testcase>
+  </testsuite>
+  <testsuite name="FolderItemComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:04" time="1.958" tests="1">
+    <testcase classname="FolderItemComponent should create" name="FolderItemComponent should create" time="0.214">
+    </testcase>
+  </testsuite>
+  <testsuite name="CompletedFileUploadsComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:04" time="1.973" tests="1">
+    <testcase classname="CompletedFileUploadsComponent should create" name="CompletedFileUploadsComponent should create" time="0.258">
+    </testcase>
+  </testsuite>
+  <testsuite name="LogoComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:05" time="1.281" tests="3">
+    <testcase classname="LogoComponent should create" name="LogoComponent should create" time="0.096">
+    </testcase>
+    <testcase classname="LogoComponent should add a css class for each size type" name="LogoComponent should add a css class for each size type" time="0.027">
+    </testcase>
+    <testcase classname="LogoComponent should forward svgLogo to content of container element" name="LogoComponent should forward svgLogo to content of container element" time="0.029">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFilesService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:04" time="1.662" tests="1">
+    <testcase classname="LibraryFilesService should not be logged in" name="LibraryFilesService should not be logged in" time="0.061">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFilesPathBreadcrumbsComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:04" time="2.112" tests="1">
+    <testcase classname="LibraryFilesPathBreadcrumbsComponent should create" name="LibraryFilesPathBreadcrumbsComponent should create" time="0.199">
+    </testcase>
+  </testsuite>
+  <testsuite name="FileDeleteDialogComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:04" time="2.051" tests="1">
+    <testcase classname="FileDeleteDialogComponent should create" name="FileDeleteDialogComponent should create" time="0.168">
+    </testcase>
+  </testsuite>
+  <testsuite name="AudioPlayerRightControlsComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:04" time="1.933" tests="1">
+    <testcase classname="AudioPlayerRightControlsComponent should create" name="AudioPlayerRightControlsComponent should create" time="0.24">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryRecentListComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:04" time="2.437" tests="1">
+    <testcase classname="LibraryRecentListComponent should create" name="LibraryRecentListComponent should create" time="0.189">
+    </testcase>
+  </testsuite>
+  <testsuite name="AudioPlayerLeftControlsComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:04" time="2.332" tests="1">
+    <testcase classname="AudioPlayerLeftControlsComponent should create" name="AudioPlayerLeftControlsComponent should create" time="0.24">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryFilesListComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:04" time="2.281" tests="1">
+    <testcase classname="LibraryFilesListComponent should create" name="LibraryFilesListComponent should create" time="0.194">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryRecentService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:05" time="1.688" tests="1">
+    <testcase classname="LibraryRecentService should not be logged in" name="LibraryRecentService should not be logged in" time="0.051">
+    </testcase>
+  </testsuite>
+  <testsuite name="ListComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:06" time="1.149" tests="1">
+    <testcase classname="ListComponent should create" name="ListComponent should create" time="0.123">
+    </testcase>
+  </testsuite>
+  <testsuite name="ProgressBarComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:05" time="1.921" tests="5">
+    <testcase classname="ProgressBarComponent should create" name="ProgressBarComponent should create" time="0.1">
+    </testcase>
+    <testcase classname="ProgressBarComponent should clamp value between 0 and 100" name="ProgressBarComponent should clamp value between 0 and 100" time="0.019">
+    </testcase>
+    <testcase classname="ProgressBarComponent should add a css class for each size" name="ProgressBarComponent should add a css class for each size" time="0.04">
+    </testcase>
+    <testcase classname="ProgressBarComponent should add a css class for each captionPosition when caption exists" name="ProgressBarComponent should add a css class for each captionPosition when caption exists" time="0.031">
+    </testcase>
+    <testcase classname="ProgressBarComponent should set simpler-progress-bar-value scale" name="ProgressBarComponent should set simpler-progress-bar-value scale" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="ChipComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:06" time="1.533" tests="4">
+    <testcase classname="ChipComponent should create" name="ChipComponent should create" time="0.09">
+    </testcase>
+    <testcase classname="ChipComponent should set icon" name="ChipComponent should set icon" time="0.03">
+    </testcase>
+    <testcase classname="ChipComponent should set color to primary by default" name="ChipComponent should set color to primary by default" time="0.015">
+    </testcase>
+    <testcase classname="ChipComponent should add a css class for each color type" name="ChipComponent should add a css class for each color type" time="0.016">
+    </testcase>
+  </testsuite>
+  <testsuite name="BreadcrumbGroupComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:06" time="1.458" tests="1">
+    <testcase classname="BreadcrumbGroupComponent should create" name="BreadcrumbGroupComponent should create" time="0.076">
+    </testcase>
+  </testsuite>
+  <testsuite name="SidenavComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:04" time="3.547" tests="2">
+    <testcase classname="SidenavComponent should create" name="SidenavComponent should create" time="0.089">
+    </testcase>
+    <testcase classname="SidenavComponent should set divider direction to vertical" name="SidenavComponent should set divider direction to vertical" time="0.02">
+    </testcase>
+  </testsuite>
+  <testsuite name="LibraryHomeService" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:06" time="1.239" tests="1">
+    <testcase classname="LibraryHomeService should be created" name="LibraryHomeService should be created" time="0.03">
+    </testcase>
+  </testsuite>
+  <testsuite name="FormatSecondsPipe" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:06" time="1.127" tests="2">
+    <testcase classname="FormatSecondsPipe should transform number of seconds totalling to under an hour into &quot;mm:ss&quot;" name="FormatSecondsPipe should transform number of seconds totalling to under an hour into &quot;mm:ss&quot;" time="0.063">
+    </testcase>
+    <testcase classname="FormatSecondsPipe should transform number of seconds totalling to over an hour into &quot;hh:mm:ss&quot;" name="FormatSecondsPipe should transform number of seconds totalling to over an hour into &quot;hh:mm:ss&quot;" time="0.02">
+    </testcase>
+  </testsuite>
+  <testsuite name="ItemComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:06" time="1.18" tests="1">
+    <testcase classname="ItemComponent should create" name="ItemComponent should create" time="0.067">
+    </testcase>
+  </testsuite>
+  <testsuite name="SkeletonComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:06" time="1.274" tests="1">
+    <testcase classname="SkeletonComponent should create" name="SkeletonComponent should create" time="0.064">
+    </testcase>
+  </testsuite>
+  <testsuite name="NavigateBackDirective" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:07" time="0.915" tests="1">
+    <testcase classname="NavigateBackDirective should get the instance" name="NavigateBackDirective should get the instance" time="0.053">
+    </testcase>
+  </testsuite>
+  <testsuite name="UploadAreaComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:03" time="4.253" tests="1">
+    <testcase classname="UploadAreaComponent should create" name="UploadAreaComponent should create" time="0.156">
+    </testcase>
+  </testsuite>
+  <testsuite name="DividerComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:07" time="1.123" tests="5">
+    <testcase classname="DividerComponent should create" name="DividerComponent should create" time="0.047">
+    </testcase>
+    <testcase classname="DividerComponent should set size to large by default" name="DividerComponent should set size to large by default" time="0.013">
+    </testcase>
+    <testcase classname="DividerComponent should add a css class for each size type" name="DividerComponent should add a css class for each size type" time="0.014">
+    </testcase>
+    <testcase classname="DividerComponent should set direction to large by default" name="DividerComponent should set direction to large by default" time="0.01">
+    </testcase>
+    <testcase classname="DividerComponent should add a css class for each direction type" name="DividerComponent should add a css class for each direction type" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="TabComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:07" time="0.992" tests="6">
+    <testcase classname="TabComponent should create" name="TabComponent should create" time="0.051">
+    </testcase>
+    <testcase classname="TabComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" name="TabComponent should remove ability to focus host (tabIndex = &quot;-1&quot;)" time="0.009">
+    </testcase>
+    <testcase classname="TabComponent should set selected" name="TabComponent should set selected" time="0.011">
+    </testcase>
+    <testcase classname="TabComponent selectTab should set selected to true" name="TabComponent selectTab should set selected to true" time="0.007">
+    </testcase>
+    <testcase classname="TabComponent selectTab should call emitSelect" name="TabComponent selectTab should call emitSelect" time="0.006">
+    </testcase>
+    <testcase classname="TabComponent emitSelect should emit a TabSelect event" name="TabComponent emitSelect should emit a TabSelect event" time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="RadioButtonComponent" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:06" time="2.598" tests="1">
+    <testcase classname="RadioButtonComponent should create" name="RadioButtonComponent should create" time="0.028">
+    </testcase>
+  </testsuite>
+  <testsuite name="RoundPipe" errors="0" failures="0" skipped="0" timestamp="2023-09-06T12:09:06" time="2.344" tests="2">
+    <testcase classname="RoundPipe should round value" name="RoundPipe should round value" time="0.034">
+    </testcase>
+    <testcase classname="RoundPipe should round value with decimals" name="RoundPipe should round value with decimals" time="0.01">
+    </testcase>
+  </testsuite>
+</testsuites>

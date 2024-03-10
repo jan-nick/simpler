@@ -1,0 +1,97 @@
+@import '../../../../styles/src/lib/scss/variables/colors';
+
+$spinner-sizes: (
+  small: 16px,
+  medium: 24px,
+  large: 40px,
+);
+
+@mixin inner-size($size) {
+  height: $size;
+  width: $size;
+  clip: rect(0, $size, $size, calc($size / 2));
+}
+
+:host {
+  display: inline-block;
+}
+
+.simpler-spinner {
+  animation: spin 2s linear infinite;
+
+  @each $size, $value in $spinner-sizes {
+    &-#{$size} {
+      height: $value;
+      width: $value;
+
+      .simpler-spinner-inner,
+      .simpler-spinner-inner::after {
+        @include inner-size($value);
+      }
+
+      .simpler-spinner-inner::after {
+        border-width: calc($value / 8);
+      }
+    }
+  }
+
+  &-inner {
+    &,
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &-inner {
+    display: block;
+    animation: spin-inner 1.2s linear infinite;
+
+    &::after {
+      content: '';
+      border-color: currentColor;
+      border-style: solid;
+      border-radius: 50%;
+      animation: spin-inner-after 1.2s ease infinite;
+
+      @each $color in $base-color-names {
+        .simpler-spinner-#{$color} & {
+          border-color: var(--clr-#{$color});
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-inner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(220deg);
+  }
+}
+
+@keyframes spin-inner-after {
+  0% {
+    transform: rotate(-140deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(140deg);
+  }
+}

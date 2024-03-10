@@ -1,0 +1,23 @@
+<div
+  *ngIf="earlyAccessService.earlyAccess$ | async; else earlyAccessPrompt"
+  class="app-container"
+  [style]="{
+    'margin-left':
+      (navbar.state$ | async) === 'logged-in' ? 'var(--sidenav-width)' : '0'
+  }"
+  [@fadeInOnEnter]
+>
+  <simpler-navbar #navbar></simpler-navbar>
+
+  <div class="app-content flex-fill">
+    <router-outlet> </router-outlet>
+  </div>
+
+  <simpler-audio-player></simpler-audio-player>
+</div>
+
+<ng-template #earlyAccessPrompt>
+  <div class="lyt-page-center">
+    <simpler-early-access></simpler-early-access>
+  </div>
+</ng-template>

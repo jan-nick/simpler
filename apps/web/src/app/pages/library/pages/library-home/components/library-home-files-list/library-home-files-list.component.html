@@ -1,0 +1,47 @@
+<div class="pt-3 gap-4 d-flex flex-column">
+  <h6 class="m-0 px-4 tp-headline-6 text-light-darker">
+    {{ 'pages.home.library.fileListTitle' | translate }}
+  </h6>
+
+  <div
+    *ngIf="{
+      files: libraryHomeService.files$ | async,
+      loading: libraryHomeService.loading$ | async,
+      error: libraryHomeService.error$ | async
+    } as data"
+    class="horizontal-list pb-2 px-4"
+  >
+    <simpler-file-card
+      *ngFor="let file of data.files"
+      (filePlay)="onFilePlay(data.files)"
+      [file]="file"
+      [@enter]
+    ></simpler-file-card>
+
+    <!-- TODO -->
+    <div
+      *ngIf="data.files?.length === 0"
+      [@enter]
+      class="w-100 d-flex justify-content-center text-light"
+    >
+      No Data
+    </div>
+
+    <ng-container *ngIf="data.loading">
+      <simpler-file-card
+        *ngFor="let skeleton of skeletonItems"
+      [@enter]
+      skeleton
+      ></simpler-file-card>
+    </ng-container>
+
+    <!-- TODO -->
+    <div
+      *ngIf="data.error"
+      [@enter]
+      class="w-100 d-flex justify-content-center text-danger"
+    >
+      Error
+    </div>
+  </div>
+</div>

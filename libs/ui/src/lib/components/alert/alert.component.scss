@@ -1,0 +1,23 @@
+@import '../../../../styles/src/lib/scss/variables/colors';
+
+:host {
+  display: block;
+}
+
+.simpler-alert {
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  @each $color in $base-color-names {
+    &.simpler-alert-#{$color} {
+      background-color: var(--clr-#{$color}-transparent-1);
+      border-color: var(--clr-#{$color});
+      color: var(--clr-#{$color});
+    }
+  }
+}

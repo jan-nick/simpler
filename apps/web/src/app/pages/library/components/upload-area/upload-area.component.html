@@ -1,0 +1,28 @@
+<div [class.file-over]="isFileOver" class="upload-area">
+  <simpler-icon
+    name="cloud-upload"
+    size="larger"
+    class="text-gray-lightest"
+  ></simpler-icon>
+
+  <p class="px-4 m-0 body-2 text-light-dark">
+    {{ 'pages.library.uploadArea.label' | translate }}
+  </p>
+
+  <input
+    #fileInput
+    (change)="onFileSelect($event)"
+    [accept]="ACCEPTED_FILE_TYPES"
+    type="file"
+    multiple
+    hidden
+  />
+
+  <simpler-button
+    (click)="fileInput.click()"
+    appearance="outline"
+    color="light"
+  >
+    {{ 'pages.library.uploadArea.button' | translate }}
+  </simpler-button>
+</div>

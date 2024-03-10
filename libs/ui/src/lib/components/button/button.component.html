@@ -1,0 +1,29 @@
+<button
+  [disabled]="disabled"
+  [type]="type"
+  [class.simpler-button-icon]="icon"
+  [class.simpler-button-loading]="loading"
+  [class.simpler-button-disabled]="disabled"
+  [ngClass]="[
+    'simpler-button-' + color,
+    'simpler-button-' + appearance,
+    icon ? 'simpler-button-icon-' + iconPosition : ''
+  ]"
+  class="simpler-button tp-button"
+>
+  <simpler-icon
+    *ngIf="!loading && icon && iconPosition === 'left'"
+    [name]="icon"
+  ></simpler-icon>
+
+  <span *ngIf="!loading" class="simpler-button-text">
+    <ng-content></ng-content>
+  </span>
+
+  <simpler-spinner *ngIf="loading"></simpler-spinner>
+
+  <simpler-icon
+    *ngIf="!loading && icon && iconPosition === 'right'"
+    [name]="icon"
+  ></simpler-icon>
+</button>

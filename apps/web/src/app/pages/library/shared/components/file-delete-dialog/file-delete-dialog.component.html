@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h4 class="modal-title">
+    {{ 'pages.library.fileDeleteDialog.dialogTitle' | translate }}
+  </h4>
+</div>
+
+<div class="modal-body">
+  <p>
+    {{ 'pages.library.fileDeleteDialog.dialogBody' | translate }}
+  </p>
+</div>
+
+<div class="modal-footer gap-3">
+  <simpler-button (click)="close()" appearance="outline" color="light">
+    {{ 'common.actions.close' | translate }}
+  </simpler-button>
+  <simpler-button (click)="save()">
+    {{ 'common.actions.save' | translate }}
+  </simpler-button>
+</div>

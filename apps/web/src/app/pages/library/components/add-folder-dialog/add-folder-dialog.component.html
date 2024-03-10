@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h4 class="tp-headline-6">
+    {{ 'pages.library.addFolderDialog.dialogTitle' | translate }}
+  </h4>
+</div>
+
+<div class="modal-body">
+  <simpler-input
+    [(ngModel)]="folderName"
+    (enter)="save()"
+    [label]="'pages.library.addFolderDialog.folderNameInputLabel' | translate"
+    [placeholder]="
+      'pages.library.addFolderDialog.folderNameInputPlaceholder' | translate
+    "
+  >
+  </simpler-input>
+</div>
+
+<div class="modal-footer gap-3">
+  <simpler-button (click)="close()" appearance="outline" color="light">
+    {{ 'common.actions.close' | translate }}
+  </simpler-button>
+  <simpler-button (click)="save()" [disabled]="!folderName">
+    {{ 'common.actions.save' | translate }}
+  </simpler-button>
+</div>

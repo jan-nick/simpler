@@ -1,0 +1,33 @@
+<button
+  [routerLink]="routerLink"
+  routerLinkActive="simpler-nav-button-is-active"
+  [disabled]="disabled"
+  [class.simpler-nav-button-has-icon]="icon"
+  [class.simpler-nav-button-has-caret]="caret"
+  [class.simpler-nav-button-is-disabled]="disabled"
+  [class.simpler-nav-button-is-loading]="loading"
+  type="button"
+  class="simpler-nav-button tp-button"
+>
+  <div *ngIf="!loading" class="simpler-nav-button-start">
+    <simpler-icon
+      *ngIf="icon"
+      [name]="icon"
+      size="small"
+      class="simpler-nav-button-icon"
+    ></simpler-icon>
+
+    <span class="simpler-nav-button-text">
+      <ng-content></ng-content>
+    </span>
+  </div>
+
+  <simpler-spinner *ngIf="loading"></simpler-spinner>
+
+  <simpler-icon
+    *ngIf="!loading && caret"
+    name="caret-right"
+    size="small"
+    class="simpler-nav-button-caret"
+  ></simpler-icon>
+</button>

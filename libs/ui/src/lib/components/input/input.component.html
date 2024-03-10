@@ -1,0 +1,84 @@
+<div
+  class="simpler-input"
+  [class.simpler-input-has-label]="!!label"
+  [class.simpler-input-has-error]="hasError"
+  [class.simpler-input-invalid]="invalid"
+  [class.simpler-input-disabled]="disabled"
+  [class.simpler-input-focused]="focused"
+>
+  <div class="simpler-input-field">
+    <div *ngIf="prefix" class="simpler-input-prefix">
+      <div
+        *ngIf="prefixType === 'text'"
+        class="simpler-input-prefix-text tp-input"
+      >
+        {{ prefix }}
+      </div>
+      <ng-container *ngIf="prefixType === 'icon'">
+        <simpler-icon [name]="prefix"></simpler-icon>
+      </ng-container>
+    </div>
+
+    <input
+      (blur)="onBlur(); onTouched()"
+      (focus)="onFocus()"
+      (change)="onChange(getValueFromChangeEvent($event)); emitChange()"
+      (input)="onChange(getValueFromChangeEvent($event)); emitChange()"
+      (keydown.enter)="onPressEnter()"
+      [(ngModel)]="value"
+      [ngModelOptions]="{ standalone: true }"
+      [placeholder]="placeholder"
+      [name]="name"
+      [type]="type"
+      [required]="required"
+      [disabled]="disabled"
+      [readonly]="readonly"
+      [autocomplete]="autocomplete"
+      [id]="name"
+      class="simpler-input-textfield tp-input"
+    />
+
+    <div *ngIf="suffix" class="simpler-input-suffix">
+      <div
+        *ngIf="suffixType === 'text'"
+        class="simpler-input-suffix-text tp-input"
+      >
+        {{ suffix }}
+      </div>
+      <ng-container *ngIf="suffixType === 'icon'">
+        <simpler-icon [name]="suffix"></simpler-icon>
+      </ng-container>
+    </div>
+
+    <div class="simpler-input-outline">
+      <div class="simpler-input-outline-start"></div>
+      <div class="simpler-input-outline-middle">
+        <label *ngIf="label" [for]="name" class="simpler-input-label tp-label">
+          {{ label }}
+        </label>
+      </div>
+      <div class="simpler-input-outline-end"></div>
+    </div>
+  </div>
+
+  <div
+    *ngIf="!errors && caption"
+    class="simpler-input-caption tp-caption"
+    [@fadeInOnEnter]
+  >
+    {{ caption }}
+  </div>
+
+  <div *ngIf="hasError && errors" class="simpler-input-errors" [@fadeInOnEnter]>
+    <div
+      *ngFor="let error of errors | keyvalue"
+      class="simpler-input-error tp-caption"
+    >
+      {{
+        (customErrorMessages && customErrorMessages[error['key']]) ||
+          ('components.input.errors.' + error.key | translate: error.value)
+      }}
+      <br />
+    </div>
+  </div>
+</div>

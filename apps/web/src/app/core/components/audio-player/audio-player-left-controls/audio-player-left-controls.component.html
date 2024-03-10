@@ -1,0 +1,28 @@
+<ng-container
+  *ngIf="{
+    file: audioPlayerService.activeFile$ | async
+  } as audioPlayer"
+>
+  <div
+    *ngIf="audioPlayer.file"
+    class="gap-3 d-flex justify-content-between align-items-center"
+  >
+    <div class="gap-3 d-flex flex-1">
+      <simpler-file-cover
+        [coverUrl]="audioPlayer.file.coverUrl"
+        size="medium"
+      ></simpler-file-cover>
+      <span class="position-relative flex-fill d-flex align-items-center">
+        <a
+          (click)="open(audioPlayer.file)"
+          [ngbTooltip]="audioPlayer.file.name"
+          class="position-absolute w-100 tp-body-1 text-light text-truncate"
+        >
+          <span>
+            {{ audioPlayer.file.name }}
+          </span>
+        </a>
+      </span>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,101 @@
+:host {
+  height: fit-content;
+  width: 232px;
+  padding: 8px 0;
+  margin: 4px;
+
+  display: inline-block;
+
+  &:hover {
+    .simpler-slider {
+      &-track-fill {
+        background-color: var(--clr-secondary);
+      }
+
+      &:not(.simpler-slider-disabled) .simpler-slider-thumb {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  .simpler-slider {
+    position: relative;
+    width: 100%;
+
+    &-disabled {
+      pointer-events: none;
+      .simpler-slider-track {
+        background-color: var(--clr-gray-darkest);
+        &-fill {
+          background-color: var(--clr-gray-lightest);
+        }
+      }
+    }
+
+    &-thumb {
+      position: absolute;
+      top: -5px;
+      left: -6px;
+
+      height: 12px;
+      width: 12px;
+
+      background-color: var(--clr-light-dark);
+      border-radius: 100px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: scale(0.5);
+
+      transition-property: opacity, transform;
+      transition-duration: var(--transition-duration-short);
+      transition-timing-function: ease;
+    }
+
+    &-track {
+      height: 2px;
+      width: 100%;
+
+      background-color: var(--clr-gray-dark);
+      border-radius: 100px;
+      box-shadow: var(--shadow-small);
+      outline: 2px solid transparent;
+      overflow: hidden;
+
+      transition: var(--transition-duration-normal) outline-color ease;
+
+      &-fill {
+        height: 100%;
+        background-color: var(--clr-light-darkest);
+
+        transform-origin: left;
+
+        transition: var(--transition-duration-short) background-color
+          ease-in-out;
+      }
+    }
+
+    &-input {
+      margin: 0;
+      inset: -8px 0;
+      position: absolute;
+      cursor: pointer;
+
+      opacity: 0;
+      z-index: 1;
+
+      &:focus-visible + .simpler-slider-track {
+        outline-color: var(--clr-primary-transparent);
+        outline-offset: 4px;
+
+        .simpler-slider-track-fill {
+          background-color: var(--clr-secondary);
+        }
+      }
+
+      &:active {
+        cursor: grabbing;
+      }
+    }
+  }
+}

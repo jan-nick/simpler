@@ -1,0 +1,20 @@
+<simpler-sidenav>
+  <div class="h-100 d-flex flex-column justify-content-between">
+    <div>
+      <p class="tp-overline text-gray">
+        {{ 'pages.settings.sidenav.userSettings' | translate }}
+      </p>
+      <simpler-list>
+        <simpler-nav-button routerLink="account" icon="house-door">
+          {{ 'pages.settings.pages.accountSettings.title' | translate }}
+        </simpler-nav-button>
+      </simpler-list>
+    </div>
+
+    <simpler-list>
+      <simpler-divider></simpler-divider>
+      <!-- TODO -->
+      <span class="tp-overline text-gray">v{{ APP_VERSION }}</span>
+    </simpler-list>
+  </div>
+</simpler-sidenav>

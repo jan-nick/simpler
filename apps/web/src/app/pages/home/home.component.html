@@ -1,0 +1,36 @@
+<div class="lyt-page-center">
+  <header class="px-3 lyt-page-center-content">
+    <h1 class="tp-headline-3" [@zoomInOnEnter]>
+      <span>
+        {{ 'pages.home.headerTitle.part-1' | translate }}
+      </span>
+      <span class="text-primary">
+        {{ 'pages.home.headerTitle.part-2' | translate }}
+      </span>
+      <span>
+        {{ 'pages.home.headerTitle.part-3' | translate }}
+      </span>
+    </h1>
+
+    <p class="tp-body-1 text-light-dark" [@fadeInUpOnEnter]>
+      {{ 'pages.home.heroSubtitleText' | translate }}
+    </p>
+
+    <simpler-button class="mt-2" routerLink="/sign-up" [@fadeInUpOnEnter]>
+      {{ 'pages.home.heroButton' | translate }}
+    </simpler-button>
+
+    <div class="m-5 d-flex flex-column gap-5">
+      <a
+        routerLink="/terms-of-service"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ 'pages.auth.signUp.submitDisclaimer.part-2' | translate }}
+      </a>
+      <a routerLink="/privacy-policy" target="_blank" rel="noopener noreferrer">
+        {{ 'pages.auth.signUp.submitDisclaimer.part-4' | translate }}
+      </a>
+    </div>
+  </header>
+</div>

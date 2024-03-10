@@ -1,0 +1,142 @@
+.simpler-checkbox {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &:active &-icon {
+    opacity: 0.9;
+    transform: scale(0.9);
+  }
+
+  &-disabled {
+    pointer-events: none;
+  }
+  &-disabled &-icon {
+    border-color: var(--clr-gray-dark);
+  }
+  &-disabled &-label {
+    color: var(--clr-gray);
+  }
+
+  &-disabled.simpler-checkbox-checked &-input:checked + &-icon {
+    border-color: var(--clr-gray-lighter);
+    svg {
+      path {
+        fill: var(--clr-gray-lighter);
+      }
+      polyline {
+        stroke: var(--clr-gray-dark);
+      }
+    }
+  }
+
+  &-checked &-input:checked + &-icon {
+    border-color: transparent;
+    &:hover {
+      svg {
+        path {
+          fill: var(--clr-primary-lightest);
+        }
+      }
+    }
+
+    // Ripple
+    &:before {
+      transform: scale(4);
+      opacity: 0;
+      transition: all var(--transition-duration-long) ease;
+    }
+
+    svg {
+      path {
+        fill: var(--clr-primary);
+      }
+      polyline {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+
+  &-input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &-input:focus + &-icon {
+    outline-color: var(--clr-primary-transparent-1);
+    outline-offset: 2px;
+  }
+
+  &,
+  &-label,
+  &-icon {
+    cursor: pointer;
+  }
+
+  &-label-right &-label {
+    margin-left: 16px;
+  }
+
+  &-label-left &-label {
+    margin-right: 16px;
+  }
+
+  &-icon {
+    width: 20px;
+    height: 20px;
+    outline: 2px solid transparent;
+    border: 2px solid var(--clr-gray-lightest);
+    border-radius: 4px;
+    position: relative;
+    transition-property: border, outline-color, opacity, transform;
+    transition-timing-function: ease;
+    transition-duration: var(--transition-duration-short);
+
+    &:hover {
+      border-color: var(--clr-light-darkest);
+    }
+
+    // Ripple
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: var(--clr-primary-transparent-1);
+      display: block;
+      transform: scale(0);
+      opacity: 1;
+      border-radius: 50%;
+    }
+
+    svg {
+      position: absolute;
+      top: -2px;
+      left: -2px;
+
+      path,
+      polyline {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+        transition-property: all;
+        transition-timing-function: ease;
+      }
+
+      path {
+        stroke: var(--clr-primary);
+        stroke-dasharray: 71px;
+        stroke-dashoffset: 71px;
+        transition-duration: var(--transition-duration-longer);
+      }
+
+      polyline {
+        stroke: var(--clr-dark);
+        stroke-dasharray: 18px;
+        stroke-dashoffset: 18px;
+        transition-duration: var(--transition-duration-short);
+      }
+    }
+  }
+}

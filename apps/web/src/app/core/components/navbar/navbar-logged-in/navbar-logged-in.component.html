@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-between">
+  <simpler-nav-button
+    routerLink="library"
+    appearance="transparent"
+    color="light"
+    id="library-button"
+  >
+    {{ 'components.navbar.libraryButton' | translate }}
+  </simpler-nav-button>
+
+  <div *ngIf="user$ | async as user" ngbDropdown container="body">
+    <div id="user-dropdown" ngbDropdownToggle>
+      <simpler-avatar
+        [src]="avatar$ | async"
+        [name]="user.name || user.email"
+        [ngbTooltip]="'components.navbar.userAvatar.tooltip' | translate"
+        size="small"
+      ></simpler-avatar>
+    </div>
+    <div ngbDropdownMenu aria-labelledby="user-dropdown">
+      <div class="px-3 py-2 gap-3 d-flex align-items-center">
+        <simpler-avatar
+          [src]="avatar$ | async"
+          [name]="user.name || user.email"
+          size="small"
+        ></simpler-avatar>
+        <div>
+          <p *ngIf="user.name" class="m-0 tp-body-1">
+            {{ user.name }}
+          </p>
+          <p class="m-0 tp-body-2 text-gray-light">
+            {{ user.email }}
+          </p>
+        </div>
+      </div>
+      <button routerLink="settings" ngbDropdownItem>
+        {{ 'components.navbar.userDropdown.items.settings' | translate }}
+      </button>
+      <button (click)="logout()" ngbDropdownItem>
+        {{ 'components.navbar.userDropdown.items.logout' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

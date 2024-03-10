@@ -1,0 +1,65 @@
+<div class="lyt-page-center" [@enter]>
+  <form
+    class="mb-2 d-flex flex-column align-items-center"
+    (ngSubmit)="onSubmit()"
+    [formGroup]="formGroup"
+  >
+    <h1 class="tp-headline-4 mb-4">
+      {{ 'pages.auth.signUp.headerTitle' | translate }}
+    </h1>
+
+    <simpler-input
+      class="mb-4"
+      (inputEnter)="onSubmit()"
+      formControlName="email"
+      name="email"
+      type="email"
+      autocomplete="email"
+      [label]="'pages.auth.signUp.emailInput.label' | translate"
+      [placeholder]="'pages.auth.signUp.emailInput.placeholder' | translate"
+      prefix="person"
+      prefixType="icon"
+    ></simpler-input>
+
+    <simpler-input
+      class="mb-4"
+      (inputEnter)="onSubmit()"
+      formControlName="password"
+      name="password"
+      type="password"
+      autocomplete="current-password"
+      [label]="'pages.auth.signUp.passwordInput.label' | translate"
+      [placeholder]="'pages.auth.signUp.passwordInput.placeholder' | translate"
+      [customErrorMessages]="{
+        pattern: 'components.validationErrors.weak-password' | translate
+      }"
+      prefix="lock"
+      prefixType="icon"
+    ></simpler-input>
+
+    <simpler-button
+      [loading]="loading$ | async"
+      class="w-100"
+      type="submit"
+      id="submit-button"
+    >
+      {{ 'pages.auth.signUp.submitButton' | translate }}
+    </simpler-button>
+
+    <span class="mw-fit-content mt-4 tp-body-2 text-light-darkest">
+      {{ 'pages.auth.signUp.submitDisclaimer.part-1' | translate }}
+      <a
+        routerLink="/terms-of-service"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ 'pages.auth.signUp.submitDisclaimer.part-2' | translate }}
+      </a>
+      {{ 'pages.auth.signUp.submitDisclaimer.part-3' | translate }}
+      <a routerLink="/privacy-policy" target="_blank" rel="noopener noreferrer">
+        {{ 'pages.auth.signUp.submitDisclaimer.part-4' | translate }}
+      </a>
+      {{ 'pages.auth.signUp.submitDisclaimer.part-5' | translate }}
+    </span>
+  </form>
+</div>

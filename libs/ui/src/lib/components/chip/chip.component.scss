@@ -1,0 +1,82 @@
+@import '../../../../styles/src/lib/scss/variables/colors';
+
+:host {
+  display: inline-block;
+}
+
+.simpler-chip {
+  height: 28px;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 100%;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+  outline-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: background-color, outline-color, opacity, transform;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: ease;
+
+  &:focus {
+    outline-style: solid;
+    outline-offset: 2px;
+    outline-width: 2px;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all var(--transition-duration-long);
+  }
+
+  &:active:after {
+    opacity: 1;
+    transition: 0ms;
+  }
+
+  &:after,
+  &:active:after {
+    position: absolute;
+    border-radius: var(--border-radius);
+    left: 0;
+    top: 0;
+  }
+
+  &-loading {
+    pointer-events: none;
+  }
+
+  &-icon-left simpler-icon {
+    margin-right: 8px;
+  }
+
+  &-icon-right simpler-icon {
+    margin-left: 8px;
+  }
+  
+  @each $color in $base-color-names {
+    &.simpler-chip-#{$color} {
+      background-color: var(--clr-#{$color});
+      color: var(--clr-#{$color}-contrast);
+
+      &:not(.simpler-chip-disabled):hover {
+        background-color: var(--clr-#{$color}-darkest);
+      }
+      &:focus {
+        background-color: var(--clr-#{$color}-darker);
+        outline-color: var(--clr-#{$color}-transparent-2);
+      }
+    }
+  }
+}
+  

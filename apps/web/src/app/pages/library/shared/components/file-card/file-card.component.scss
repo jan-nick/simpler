@@ -1,0 +1,39 @@
+:host {
+  cursor: pointer;
+  width: fit-content;
+
+  &:hover {
+    .file-cover-container {
+      simpler-file-cover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.file-cover-container {
+  position: relative;
+
+  height: 144px;
+  width: 144px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  border-radius: 24px;
+
+  simpler-file-cover {
+    opacity: 0.8;
+    transition-property: opacity;
+    transition-duration: var(--transition-duration-short);
+    transition-timing-function: ease;
+  }
+
+  .play-button {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+  }
+}

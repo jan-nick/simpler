@@ -1,0 +1,13 @@
+<div
+  class="simpler-icon"
+  [ngClass]="['simpler-icon-' + size]"
+  [class.simpler-icon-with-background]="withBackground"
+>
+  <i-bs
+    [name]="name"
+    [height]="sizeSpecs[size]"
+    [width]="sizeSpecs[size]"
+    [ngStyle]="{ height: sizeSpecs[size], width: sizeSpecs[size] }"
+  ></i-bs>
+  <ng-content></ng-content>
+</div>

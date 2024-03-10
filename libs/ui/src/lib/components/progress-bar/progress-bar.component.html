@@ -1,0 +1,42 @@
+<div
+  class="simpler-progress-bar"
+  [ngClass]="[
+    caption ? 'simpler-progress-bar-caption-' + captionPosition : '',
+    'simpler-progress-bar-' + size
+  ]"
+>
+  <ng-container
+    *ngIf="
+      caption &&
+      (captionPosition === 'top-left' ||
+        captionPosition === 'top-right' ||
+        captionPosition === 'inline-left')
+    "
+  >
+    <span class="tp-caption simpler-progress-bar-caption">
+      {{ caption }}
+    </span>
+  </ng-container>
+
+  <div class="simpler-progress-bar-inner">
+    <div
+      class="simpler-progress-bar-value"
+      [ngStyle]="{
+        transform: 'scaleX(' + value / 100 + ')'
+      }"
+    ></div>
+  </div>
+
+  <ng-container
+    *ngIf="
+      caption &&
+      (captionPosition === 'bottom-left' ||
+        captionPosition === 'bottom-right' ||
+        captionPosition === 'inline-right')
+    "
+  >
+    <span class="tp-caption simpler-progress-bar-caption">
+      {{ caption }}
+    </span>
+  </ng-container>
+</div>

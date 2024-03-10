@@ -1,0 +1,17 @@
+<div class="pt-2 px-4">
+  <div class="mb-3 d-flex justify-content-between align-items-center">
+    <simpler-library-files-path-breadcrumbs></simpler-library-files-path-breadcrumbs>
+
+    <simpler-icon-button
+      (click)="libraryFilesService.openAddFolderDialog()"
+      [ngbTooltip]="'pages.library.addFolderButton.tooltip' | translate"
+      appearance="outline"
+      color="light"
+      icon="folder-plus"
+      size="small"
+    >
+    </simpler-icon-button>
+  </div>
+
+  <simpler-library-files-list></simpler-library-files-list>
+</div>

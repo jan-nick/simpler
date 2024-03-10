@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  outline-offset: 2px;
+  outline: 2px solid transparent;
+  border-radius: 10px;
+
+  &:focus-visible {
+    outline-color: var(--clr-primary-transparent-1);
+  }
+}
+
+.simpler-logo {
+  cursor: pointer;
+  &-small {
+    width: 24px;
+    height: 24px;
+  }
+  &-medium {
+    width: 48px;
+    height: 48px;
+  }
+  &-large {
+    width: 80px;
+    height: 80px;
+  }
+}

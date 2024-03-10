@@ -1,0 +1,54 @@
+<div class="lyt-page-center" [@enter]>
+  <form
+    class="mb-3 d-flex flex-column"
+    (ngSubmit)="onSubmit()"
+    [formGroup]="formGroup"
+  >
+    <h1 class="tp-headline-4 mb-4">
+      {{ 'pages.auth.signIn.headerTitle' | translate }}
+    </h1>
+
+    <simpler-input
+      class="mb-4"
+      (inputEnter)="onSubmit()"
+      formControlName="email"
+      name="email"
+      type="email"
+      autocomplete="email"
+      [label]="'pages.auth.signIn.emailInput.label' | translate"
+      [placeholder]="'pages.auth.signIn.emailInput.placeholder' | translate"
+      prefix="person"
+      prefixType="icon"
+    ></simpler-input>
+
+    <simpler-input
+      class="mb-4"
+      (inputEnter)="onSubmit()"
+      formControlName="password"
+      name="password"
+      type="password"
+      autocomplete="current-password"
+      [label]="'pages.auth.signIn.passwordInput.label' | translate"
+      [placeholder]="'pages.auth.signIn.passwordInput.placeholder' | translate"
+      prefix="lock"
+      prefixType="icon"
+    ></simpler-input>
+
+    <simpler-button
+      [loading]="loading$ | async"
+      class="w-100"
+      type="submit"
+      id="submit-button"
+    >
+      {{ 'pages.auth.signIn.submitButton' | translate }}
+    </simpler-button>
+  </form>
+
+  <simpler-button
+    routerLink="/reset-password"
+    appearance="transparent"
+    color="light"
+  >
+    {{ 'pages.auth.signIn.resetPasswordButton' | translate }}
+  </simpler-button>
+</div>

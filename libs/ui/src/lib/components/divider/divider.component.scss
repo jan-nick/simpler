@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.simpler-divider {
+  background-color: var(--clr-light-transparent-1);
+
+  &-horizontal {
+    width: 100%;
+  }
+
+  &-large.simpler-divider-horizontal {
+    height: 4px;
+  }
+  &-small.simpler-divider-horizontal {
+    height: 1px;
+  }
+
+  &-vertical {
+    height: 100%;
+  }
+
+  &-large.simpler-divider-vertical {
+    width: 4px;
+  }
+  &-small.simpler-divider-vertical {
+    width: 1px;
+  }
+}

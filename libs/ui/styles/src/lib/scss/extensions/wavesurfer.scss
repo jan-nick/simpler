@@ -1,0 +1,13 @@
+#waveform {
+  overflow: hidden;
+
+  // waveform track
+  wave {
+    cursor: pointer !important;
+
+    // waveform progress
+    wave {
+      background-color: var(--clr-secondary);
+    }
+  }
+}

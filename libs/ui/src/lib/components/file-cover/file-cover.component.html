@@ -1,0 +1,9 @@
+<simpler-icon name="file-earmark-play" [size]="size" withBackground>
+  <img
+    *ngIf="
+      coverUrl && signedCoverUrl$ && (signedCoverUrl$ | async) as signedCoverUrl
+    "
+    [src]="signedCoverUrl"
+    alt=""
+  />
+</simpler-icon>

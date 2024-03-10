@@ -1,0 +1,36 @@
+:host {
+  height: 100%;
+}
+
+.file-cover {
+  position: relative;
+
+  cursor: pointer;
+
+  &-button-wrapper {
+    inset: 0;
+    position: absolute;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  simpler-file-cover {
+    transition-property: opacity;
+    transition-duration: var(--transition-duration-short);
+    transition-timing-function: ease;
+  }
+
+  &:hover &-button-wrapper {
+    display: flex;
+  }
+
+  &:hover simpler-file-cover {
+    opacity: 0.2;
+  }
+
+  &:active simpler-file-cover {
+    opacity: 0.1;
+  }
+}

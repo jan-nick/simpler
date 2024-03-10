@@ -1,0 +1,17 @@
+<simpler-icon-button
+  (click)="openFileShareDialog()"
+  [ngbTooltip]="'pages.library.shareFileButton.tooltip' | translate"
+  appearance="outline"
+  color="light"
+  icon="share"
+  size="small"
+>
+</simpler-icon-button>
+
+<div
+  [ngbTooltip]="
+    'pages.library.fileShareDialog.copyLinkButton.copiedTooltip' | translate
+  "
+  triggers="manual"
+  triggers="click:blur"
+></div>

@@ -1,0 +1,46 @@
+<simpler-item
+  [ngbTooltip]="upload?.name"
+  [class.animation-fade-loop]="skeleton"
+>
+  <ng-container start>
+    <ng-container *ngIf="!skeleton">
+      <simpler-file-cover
+        [coverUrl]="upload?.coverUrl"
+        size="small"
+      ></simpler-file-cover>
+    </ng-container>
+
+    <simpler-skeleton
+      *ngIf="skeleton"
+      style="width: 32px; height: 32px; border-radius: 8px"
+    ></simpler-skeleton>
+  </ng-container>
+
+  <ng-container title>
+    <ng-container *ngIf="!skeleton">
+      {{ upload?.name }}
+    </ng-container>
+
+    <simpler-skeleton
+      *ngIf="skeleton"
+      style="width: 50%; height: 14px"
+    ></simpler-skeleton>
+  </ng-container>
+
+  <ng-container end>
+    <ng-container *ngIf="!skeleton">
+      <p *ngIf="upload?.updatedAt" class="m-0 tp-body-2 text-gray-light">
+        {{
+          (upload?.updatedAt | dfnsFormatDistanceToNow) +
+            ' ' +
+            ('common.dateTime.ago' | translate)
+        }}
+      </p>
+    </ng-container>
+
+    <simpler-skeleton
+      *ngIf="skeleton"
+      style="width: 10%; height: 14px"
+    ></simpler-skeleton>
+  </ng-container>
+</simpler-item>

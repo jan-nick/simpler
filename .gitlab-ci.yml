@@ -1,0 +1,65 @@
+image: node:18.12-alpine3.16
+
+stages:
+  - dependencies
+  - client
+  - test
+  - build
+
+install-dependencies:
+  stage: dependencies
+  interruptible: true
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+  script:
+    - npm ci --legacy-peer-deps
+
+# TODO: linting isn't working :(
+# lint-test:
+#   stage: test
+#   script:
+#     - npx nx run-many --all --target=lint
+#   cache:
+#     key:
+#       files:
+#         - package-lock.json
+#     paths:
+#       - node_modules
+#     policy: pull
+
+unit-test:
+  stage: test
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  script:
+    - npm run test:ci
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - junit.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
+
+build:
+  stage: build
+  script:
+    - npm run build
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull

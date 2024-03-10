@@ -1,0 +1,77 @@
+@import '../../../../styles/src/lib/scss/variables/colors';
+
+:host {
+  display: inline-block;
+}
+
+.simpler-nav-button {
+  height: 44px;
+  width: 100%;
+
+  padding: 0 12px;
+
+  position: relative;
+
+  gap: 24px;
+
+  display: flex;
+  align-items: center;
+
+  color: var(--clr-gray-lightest);
+  background-color: transparent;
+
+  border: none;
+  border-radius: var(--border-radius);
+  outline-color: transparent;
+
+  cursor: pointer;
+
+  transition-property: color, background-color, outline-color, opacity,
+    transform;
+  transition-duration: var(--transition-duration-shortest);
+  transition-timing-function: ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--clr-light);
+    background-color: var(--clr-gray-transparent-2);
+  }
+
+  &:active {
+    color: var(--clr-light-darkest);
+  }
+
+  &-is-active {
+    color: var(--clr-light);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--clr-light);
+    }
+  }
+
+  &-has-caret {
+    justify-content: space-between;
+  }
+
+  &-start {
+    gap: 16px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &-is-disabled {
+    color: var(--clr-gray-darkest);
+  }
+
+  &-is-disabled,
+  &-is-loading {
+    pointer-events: none;
+  }
+
+  simpler-spinner {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

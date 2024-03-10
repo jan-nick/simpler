@@ -1,0 +1,67 @@
+:host {
+  position: relative;
+}
+.upload-progress-wrapper {
+  inset: 0;
+  position: absolute;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  z-index: -1;
+}
+.upload-progress {
+  height: 100%;
+  width: 100%;
+  background-color: var(--clr-gray-transparent-2);
+  transform-origin: left;
+  transition: var(--transition-duration-long) transform ease;
+}
+
+.animated-checkmark {
+  position: absolute;
+  right: 8px;
+  opacity: 0;
+  transition: var(--transition-duration-long) opacity ease;
+  &.checked {
+    opacity: 1;
+    svg {
+      polyline {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+
+  svg {
+    path,
+    polyline {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
+      transition-property: all;
+      transition-timing-function: ease;
+    }
+
+    path {
+      stroke-dasharray: 71px;
+      stroke-dashoffset: 71px;
+      transition-duration: var(--transition-duration-longer);
+    }
+
+    polyline {
+      stroke: var(--clr-light);
+      stroke-dasharray: 18px;
+      stroke-dashoffset: 18px;
+      transition-duration: var(--transition-duration-short);
+      animation: var(--transition-duration-long) checkmark ease;
+    }
+  }
+}
+
+@keyframes checkmark {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

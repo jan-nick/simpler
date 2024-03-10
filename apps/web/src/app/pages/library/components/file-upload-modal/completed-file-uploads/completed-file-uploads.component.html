@@ -1,0 +1,46 @@
+<div
+  *ngIf="{
+    files: libraryUploadService.files$ | async,
+    loading: libraryUploadService.loadingFiles$ | async,
+    error: libraryUploadService.error$ | async
+  } as data"
+  class="modal-body my-2"
+>
+  <simpler-list
+    scroll
+    (scrollEnd)="!data.loading && onScrollEnd(data.files)"
+    id="item-list"
+  >
+    <simpler-completed-upload-item
+      *ngFor="let file of data.files"
+      [upload]="file"
+      [@enter]
+    ></simpler-completed-upload-item>
+
+    <!-- TODO -->
+    <div
+      *ngIf="!data.loading && data.files?.length === 0"
+      [@enter]
+      class="w-100 d-flex justify-content-center text-light"
+    >
+      No Data
+    </div>
+
+    <ng-container *ngIf="data.loading">
+      <simpler-completed-upload-item
+        *ngFor="let skeleton of skeletonItems"
+        [@enter]
+        skeleton
+      ></simpler-completed-upload-item>
+    </ng-container>
+  </simpler-list>
+
+  <!-- TODO -->
+  <div
+    *ngIf="!data.loading && data.error"
+    [@enter]
+    class="w-100 d-flex justify-content-center text-danger"
+  >
+    Error
+  </div>
+</div>

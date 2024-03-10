@@ -1,0 +1,19 @@
+<div
+  [class.simpler-breadcrumb-active]="active"
+  [class.simpler-breadcrumb-icon]="icon"
+  [class.simpler-breadcrumb-disabled]="disabled"
+  class="simpler-breadcrumb tp-body-2"
+>
+  <simpler-icon *ngIf="icon" [name]="icon" size="small"></simpler-icon>
+
+  <span class="simpler-breadcrumb-label">
+    <ng-content></ng-content>
+  </span>
+
+  <simpler-icon
+    *ngIf="!active"
+    name="chevron-right"
+    size="small"
+  >
+  </simpler-icon>
+</div>

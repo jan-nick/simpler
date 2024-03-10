@@ -1,0 +1,20 @@
+<button
+  [disabled]="disabled"
+  [type]="type"
+  [ngClass]="[
+    'simpler-icon-button-' + appearance,
+    'simpler-icon-button-' + color,
+    'simpler-icon-button-' + size,
+    disabled ? 'simpler-icon-button-disabled' : '',
+    loading ? 'simpler-icon-button-loading' : ''
+  ]"
+  class="simpler-icon-button"
+>
+  <simpler-spinner *ngIf="loading"></simpler-spinner>
+
+  <simpler-icon
+    *ngIf="!loading"
+    [name]="icon"
+    [size]="size === 'large' ? 'medium' : 'small'"
+  ></simpler-icon>
+</button>

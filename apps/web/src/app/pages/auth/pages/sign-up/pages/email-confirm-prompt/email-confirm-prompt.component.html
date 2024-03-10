@@ -1,0 +1,19 @@
+<div class="lyt-page-center flex-row" [@enter]>
+  <img
+    class="illustration me-6"
+    src="../../../../../../../assets/images/illustrations/envelope.png"
+    alt=""
+  />
+  <header class="lyt-page-center-content text-start">
+    <h1 class="tp-headline-4">
+      {{ 'pages.auth.signUp.emailConfirmPrompt.headerTitle' | translate }}
+    </h1>
+    <p class="tp-body-1 text-light-dark mb-4">
+      {{ 'pages.auth.signUp.emailConfirmPrompt.headerMessage' | translate }}
+    </p>
+    <!-- ! Resend not supported by BE yet -->
+    <!-- <simpler-button (click)="sendEmailConfirm()">{{
+      'pages.auth.signUp.emailConfirmPrompt.headerButton' | translate
+    }}</simpler-button> -->
+  </header>
+</div>
